@@ -39,3 +39,18 @@ func main() {
 ```
 # Serve static files
 go run main.go
+
+
+# Note, Pelican has this importer tool, but I don't think it will work for pure HTML
+https://docs.getpelican.com/en/latest/importer.html
+
+
+# I used this theme
+pushd ../pelican-dev-env/lib/python3.12/site-packages/pelican/themes/
+git clone https://github.com/hamaluik/foundation-default-colours.git
+echo "THEME = '../pelican-dev-env/lib/python3.12/site-packages/pelican/themes/foundation-default-colours'" > pelicanconf.py
+../pelican-dev-env/bin/python -m pelican content -s pelicanconf.py
+
+
+# Needed this to convert to markdown
+../../../pelican-dev-env/bin/python -m pip install "html2text"

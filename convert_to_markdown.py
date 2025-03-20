@@ -12,9 +12,9 @@ def convert_html_to_markdown(html_file_path, markdown_file_path):
         markdown_file.write(markdown_content)
 
 # Directory containing the HTML files
-html_directory = 'path/to/html/files'
+html_directory = '/home/katrina/pelican-dev/katrinae.github.io/pages'
 # Directory to save the converted Markdown files
-markdown_directory = 'path/to/markdown/files'
+markdown_directory = '/home/katrina/pelican-dev/pelican-site/content/pages'
 
 # Ensure the markdown directory exists
 os.makedirs(markdown_directory, exist_ok=True)
