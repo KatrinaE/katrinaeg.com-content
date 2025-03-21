@@ -220,32 +220,3 @@ debug - I'd have to get out datasheets and begin from there.
 
 ###### Category: [misc](/category/misc.html).
 
-* * *
-
-![](/theme/img/headshot.png)
-
-##### Links
-
-[LinkedIn](http://www.linkedin.com/in/katrinaellison)
-
-[GitHub](http://www.github.com/katrinae)
-
-[SlideShare](http://www.slideshare.net/kellison00)
-
-##### Monthly Archives
-
-[December 2015 (1)](/posts/2015/12/)
-
-[May 2014 (2)](/posts/2014/05/)
-
-[April 2014 (3)](/posts/2014/04/)
-
-[March 2014 (2)](/posts/2014/03/)
-
-[February 2014 (2)](/posts/2014/02/)
-
-* * *
-
-Powered by Pelican and based on a theme by [Kenton
-Hamaluik](http://hamaluik.com).
-
