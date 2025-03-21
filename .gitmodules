@@ -1,0 +1,3 @@
+[submodule "themes/foundation-default-colours"]
+	path = themes/foundation-default-colours
+	url = https://github.com/hamaluik/foundation-default-colours.git
