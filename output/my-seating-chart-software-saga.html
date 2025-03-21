@@ -95,54 +95,67 @@
 						<!-- Main Content -->
 						<div class="medium-9 small-12 columns" role="content">
 <article>
-	<h2>Hacker School Reflections Old</h2>
-	<h2>Hacker School Reflections</h2>
-<p>When I arrived at Hacker School, I laid out the following goals for myself:</p>
-<blockquote>
-<p>While I'm here, I want to:
-- Fill in some gaps (learn a statically typed language, use git correctly),
-- Finish a 'real' project,
-- Explore some cool stuff (right now I'm curious about algorithms, the Linux kernel, and distributed computing),
-- Generally sharpen my skills (I wrote in my application that I wanted to become a Python ninja).</p>
-</blockquote>
-<p>So... how'd I do?</p>
-<h3>Learning a statically typed language</h3>
-<p>I set this goal for myself because I felt like, having worked mostly in Python, I wouldn't be a real programmer until I could use something besides a scripting language.</p>
-<p>At Hacker School, I learned to read and write a little bit of Arduino code (a close cousin of C++), and I started learning about low-level concepts like pointers memory allocation (it helped that I read <a href="http://www.amazon.com/Code-Language-Computer-Hardware-Software/dp/0735611319/ref=sr_1_1?s=books&amp;ie=UTF8&amp;qid=1401493596&amp;sr=1-1&amp;keywords=code">Code</a> - a great book!). Unfortunately, I didn't spend as much time on this as I would have liked because I got distracted by solving problems that arose in my existing projects.</p>
-<h3>Using git correctly</h3>
-<p>I've had some scares (most recently, I accidentally created a duplicate copy of every single commit in a repository), but overall I'm much more confident in my git abilities than I was when I arrived at Hacker School.</p>
-<h3>Finishing a 'real' project</h3>
-<p>I did that! I finished my Seating Chart Creator application and handed it off to my 'client' (the work was pro-bono and open source) earlier this month.</p>
-<h3>Learning algorithms</h3>
-<p>I set this goal because algorithms problems always seemed to involve solving fun puzzles, and I like doing that. I felt like I had missed out on something by failing to study algorithms during undergrad and then taking a less-than-satisfying course on them afterwards.</p>
-<p>At Hacker School, I became intimately acquainted with <a href="/simulated-annealing.html">simulated annealing</a>, but I didn't really study other algorithms. I think I turned away from them because it felt too much like being a 'student' and not enough like being a 'real person'. After what feels like a lifetime of studying things that have no immediate application, I was ready to focus on more applied skills.</p>
-<h3>Exploring the Linux kernel and distributed computing</h3>
-<p>No and no. Maybe another session at Hacker School is in my future?</p>
-<h3>Becoming a Python ninja</h3>
-<p>Well, I wouldn't say I'm a ninja (aside: I hate that word. Why did I use it?) but I'm definitely much more well-versed in Python. I'm comfortable writing idiomatic code, know a bit of what's going on under the covers, and am comfortable diving into the source code when I need to know more.</p>
-<p>My most satisfying Python learning moment? When I finally understood the syntax of doubly-nested list comprehensions:</p>
-<div class="highlight"><pre><span></span><code><span class="n">x</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]]</span>
-<span class="nb">print</span><span class="p">([</span><span class="n">b</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">x</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">a</span> <span class="k">if</span> <span class="n">b</span><span class="p">])</span>
-<span class="c1"># prints [1, 1]</span>
-</code></pre></div>
-
-<h3>What else did I do?</h3>
-<p>So if I didn't convincingly achieve all of my goals, what did I do?</p>
-<ul>
-<li>Built an Arduino RC car</li>
-<li>Made a simple web app with Node.js and Angular</li>
-<li>Wrote a bunch of blog posts (never intended to do that!)</li>
-<li>Whiteboarded ideas for reducing a program's execution time</li>
-<li>Heard great tech talks from residents and visiting companies</li>
-<li>Got over my fears of asking for help on IRC and Stack Overflow</li>
-<li>Played other Hacker Schoolers' video games, then learned how they worked</li>
-<li>Received lots of great life/career advice from more experienced Hacker Schoolers, facilitators, and alums</li>
-<li>Went on many walks along the West Side greenway</li>
-<li>Made tons of great friends</li>
-<li>Became confident I could move to New York if I wanted to</li>
-</ul>
-<p>Most of these 'accomplishments' are intangible, but I'm okay with that. When you're working, most things have some sort of deliverable that needs to be delivered at some specific time. Hacker School gave me the luxury of focusing on the journey itself.</p>
-	<h6>Written by <a href="/author/.html"></a> on Fri 30 May 2014.</h6>
+	<h2>My Seating Chart Software Saga</h2>
+	<p>For the first few weeks of Hacker School, I've been working on a project that
+began last summer, when I volunteered to help out one of my husband's co-
+workers. She's responsible for putting together the seating chart for a five-
+day-long conference every year. She spends a week obsessing over it, making
+sure that people don't sit together too frequently and that they don't get
+trapped in the back corner every day. I jumped at the chance to automate the
+seating chart's creation, thinking it would take me a weekend.</p>
+<p>Boy, was I wrong. I did crank out a disgusting-looking script in time for the
+conference, but my approach - a basic greedy strategy - didn't achieve
+perfection, and I had no idea what would be better. My husband's co-worker was
+grateful but disappointed. I was vaguely ashamed. Still, she liked it well
+enough that she asked for it so she could use it again next year.</p>
+<p>At that point I was embarrassed at the mere thought of anyone else ever laying
+eyes on the code, so I started cleaning it up - but I still had no idea about
+how to improve my results. It distressed me that I couldn't prove whether or
+not there was an optimal solution, or even figure out how many possibilities
+there were. I tried several times, but my math skills just weren't up to it.</p>
+<p>Gripped by my problem, I bought <a href="http://www.amazon.com/Introduction-
+Algorithms-Thomas-H-Cormen/dp/0262033844">CLRS</a> and took an undergrad algorithms
+course (it was disappointing). I got the <a href="http://www.amazon.com/Algorithm-Design-Manual-Steven-
+Skiena/dp/1848000693/ref=pd_sim_b_4/187-1310092-7742419?ie=UTF8&amp;refRID=1D6919RZAFGT9RXXAP9W">Algorithm Design
+Manual</a>,
+which seemed like it would be useful, but by then my free time had decreased
+and I had to table the project until Hacker School began.</p>
+<p>By the time I was there, I had decided that <a href="/sim-anneal-
+overview.html">simulated annealing</a> might be what I wanted. HS resident Greg agreed that this was a
+good strategy, and I set out to implement it. My early results were
+discouraging. I was now using an appropriate algorithm, but my seating charts
+were no better than the ones I had generated using my naive one.</p>
+<p>I kept tweaking the annealing parameters, though, and started to make some
+progress. I eventually got to a point where I was consistently achieving costs
+between 60 and 100, which was amazing compared to the 2,000 - 5,000 range of
+my greedy strategy, to say nothing of the cost of random solutions, which
+could range into the millions.</p>
+<p>And then one day, riding home on the train, I made a minor change, re-ran the
+program, and saw:</p>
+<p><img alt="Achieving zero cost" src="/images/zero_cost.png"></p>
+<p>!!!</p>
+<p>I couldn't believe it. 8 months after I'd happened upon this problem, I'd
+finally found what I was looking for. It wasn't a fluke - subsequent runs
+confirmed that my program really did work.</p>
+<p>Of course, to make this a deliverable application, there's still a lot to do:
+make it faster, build a GUI (gulp), write documentation, achieve reasonable
+test coverage...</p>
+<p>This isn't paid work - the repo is <a href="https://github.com/KatrinaE/seating">on
+Github</a> - so in a way it's tempting to
+put it aside now that I've conquered the part of it that was so vexing. Now,
+though, I don't think I'll be satisfied until I can put a stamp on this
+project and say 'done'. In its current form, the code is really 'for' this one
+person (because a fair amount is hard-coded into it), and I almost feel like
+it would be rude for me to have worked on her fun problem all year without
+giving her anything in return.</p>
+<p>So my plan is to get all of those things done within the next few months - in
+time for this year's conference.</p>
+<hr>
+<h6>Category: [Seating Chart Creator](/category/seating-chart-</h6>
+<p>creator.html). Tags: <a href="/tag/seating-chart.html">Seating Chart</a>,
+<a href="/tag/narratives.html">narratives</a>,</p>
+<hr>
+	<h6>Written by <a href="/author/.html"></a> on Sun 02 March 2014.</h6>
 </article>
 
 						</div>

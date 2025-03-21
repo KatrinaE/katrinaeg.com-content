@@ -1,0 +1,343 @@
+<!doctype html>
+<html class="no-js" lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<title>Katrina Ellison Geltman</title>
+		<meta name="description" content="">
+		<meta name="author" content="">
+
+		<link rel="stylesheet" href="/theme/css/foundation.css" />
+		<link rel="stylesheet" href="/theme/css/pygment/monokai.css" />
+		<link rel="stylesheet" href="/theme/css/custom.css" />
+
+
+		<script src="/theme/js/modernizr.js"></script>
+
+		<!-- Feeds -->
+		<link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Katrina Ellison Geltman Atom Feed" />
+
+
+		<!-- mathjax config similar to math.stackexchange -->
+		<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+			jax: ["input/TeX", "output/HTML-CSS"],
+			tex2jax: {
+				inlineMath: [ ['$', '$'] ],
+				displayMath: [ ['$$', '$$']],
+				processEscapes: true,
+				skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+			},
+			messageStyle: "none",
+			"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
+		});
+		</script>
+		<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+	</head>
+	<body>
+		<div class="off-canvas-wrap">
+			<div class="inner-wrap">
+				<!-- mobile top bar to activate nav -->
+				<nav class="tab-bar show-for-small">
+					<section class="left-small">
+						<a class="left-off-canvas-toggle menu-icon" ><span></span></a>
+					</section>
+
+					<section class="middle tab-bar-section">
+						<h1 class="title">Katrina&nbsp;Ellison&nbsp;Geltman</h1>
+					</section>
+				</nav>
+
+				<!-- mobile side bar nav -->
+				<aside class="left-off-canvas-menu">
+					<ul class="off-canvas-list">
+						<li><a href="">Home</a></li>
+						<li><label>Categories</label></li>
+							<li ><a href="/pages/about-me.html">About Me</a></li>
+							<li ><a href="/pages/projects.html">Projects</a></li>
+						<li><a href="/archives.html">Archives</a></li>
+
+						<li><label>Links</label></li>
+							<li><a href="http://www.linkedin.com/in/katrinaellison">LinkedIn</a></li>
+							<li><a href="http://www.github.com/katrinae">GitHub</a></li>
+							<li><a href="http://www.slideshare.net/kellison00">SlideShare</a></li>
+
+						<li><label>Monthly Archives</label></li>
+									<li><a href="/posts/2015/12/">December 2015 (1)</a></li>
+									<li><a href="/posts/2014/05/">May 2014 (3)</a></li>
+									<li><a href="/posts/2014/04/">April 2014 (4)</a></li>
+									<li><a href="/posts/2014/03/">March 2014 (2)</a></li>
+									<li><a href="/posts/2014/02/">February 2014 (2)</a></li>
+					</ul>	
+				</aside>
+
+				<!-- top bar nav -->
+				<nav class="top-bar hide-for-small-only" data-topbar>
+					<ul class="title-area">
+						<li class="name">
+							<h1><a href="/">Katrina Ellison Geltman</a></h1>
+						</li>
+					</ul>
+
+					<section class="top-bar-section">
+						<ul class="left">
+						            <li ><a href="/pages/about-me.html">About Me</a></li>
+						            <li ><a href="/pages/projects.html">Projects</a></li>
+							    <li><a href="/archives.html">Archives</a>
+						</ul>
+					</section>
+				</nav>
+
+				<!-- Main Page Content and Sidebar -->
+				<section class="main-section">
+					<div class="row">
+						<!-- Main Content -->
+						<div class="medium-9 small-12 columns" role="content">
+<article>
+	<h2>Debugging the Arduino WiFi Shield</h2>
+	<h3>The Problem</h3>
+<p>After disconnecting from the internet, the Arduno WiFi shield (sitting atop an
+Uno) is able to reconnect, but cannot re-start a server.</p>
+<p>For example, here's the output of running the built-in <code>SimpleWebServerWiFi</code>
+sketch (you can find it in the Arduino IDE under File &gt; Examples &gt; WiFi &gt;
+SimpleWebServerWiFi).</p>
+<div class="highlight"><pre><span></span><code>    <span class="nv">Attempting</span> <span class="s s-Atom">to</span> <span class="s s-Atom">connect</span> <span class="s s-Atom">to</span> <span class="nv">Network</span> <span class="s s-Atom">named</span><span class="p">:</span> <span class="o">&lt;</span><span class="s s-Atom">my</span> <span class="s s-Atom">network</span><span class="o">&gt;</span>
+<span class="nv">SSID</span><span class="o">:</span> <span class="o">&lt;</span><span class="s s-Atom">my</span> <span class="s s-Atom">network</span><span class="o">&gt;</span>
+<span class="nv">IP</span> <span class="nv">Address</span><span class="o">:</span> <span class="o">&lt;</span><span class="s s-Atom">my</span> <span class="nv">IP</span><span class="o">&gt;</span>
+<span class="s s-Atom">signal</span> <span class="nf">strength</span> <span class="p">(</span><span class="nv">RSSI</span><span class="p">)</span><span class="o">:-</span><span class="mi">46</span> <span class="s s-Atom">dBm</span>
+<span class="nv">To</span> <span class="s s-Atom">see</span> <span class="s s-Atom">this</span> <span class="s s-Atom">page</span> <span class="s s-Atom">in</span> <span class="s s-Atom">action</span><span class="p">,</span> <span class="s s-Atom">open</span> <span class="s s-Atom">a</span> <span class="s s-Atom">browser</span> <span class="s s-Atom">to</span> <span class="s s-Atom">http</span><span class="p">:</span><span class="s s-Atom">//&lt;my</span> <span class="nv">IP</span><span class="o">&gt;</span>
+</code></pre></div>
+
+<p>Great - I think I'm connected! I can successfully ping the Arduino's IP
+address:</p>
+<div class="highlight"><pre><span></span><code>    $ ping &lt;my IP&gt;
+PING &lt;my IP&gt; (&lt;my IP&gt;): 56 data bytes
+64 bytes from &lt;my IP&gt;: icmp_seq=0 ttl=255 time=4.371 ms
+64 bytes from &lt;my IP&gt;: icmp_seq=1 ttl=255 time=6.826 ms
+64 bytes from &lt;my IP&gt;: icmp_seq=2 ttl=255 time=17.500 ms
+64 bytes from &lt;my IP&gt;: icmp_seq=3 ttl=255 time=5.556 ms
+64 bytes from &lt;my IP&gt;: icmp_seq=4 ttl=255 time=7.440 ms
+^C
+--- &lt;my IP&gt; ping statistics ---
+5 packets transmitted, 5 packets received, 0.0% packet loss
+round-trip min/avg/max/stddev = 4.371/8.339/17.500/4.701 ms
+</code></pre></div>
+
+<p>But I can’t complete HTTP requests:</p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="o">$</span><span class="w"> </span><span class="nt">curl</span><span class="w"> </span><span class="nt">-G</span><span class="w"> </span><span class="nt">http</span><span class="o">://&lt;</span><span class="nt">my</span><span class="w"> </span><span class="nt">IP</span><span class="o">&gt;</span>
+<span class="nt">curl</span><span class="o">:</span><span class="w"> </span><span class="o">(</span><span class="nt">7</span><span class="o">)</span><span class="w"> </span><span class="nt">Failed</span><span class="w"> </span><span class="nt">connect</span><span class="w"> </span><span class="nt">to</span><span class="w"> </span><span class="o">&lt;</span><span class="nt">my</span><span class="w"> </span><span class="nt">IP</span><span class="o">&gt;</span><span class="p">:</span><span class="nd">80</span><span class="o">;</span><span class="w"> </span><span class="nt">Connection</span><span class="w"> </span><span class="nt">refused</span>
+</code></pre></div>
+
+<p>And using telnet is just weird:</p>
+<div class="highlight"><pre><span></span><code>    $ telnet &lt;my IP&gt;
+Trying &lt;my IP&gt;...
+Connected to &lt;my IP&gt;.
+Escape character is &#39;^]&#39;.
+Hello, client!
+^C^] Iso conf am uso confsued^Msed?? // should be &#39;I am so confused??&#39;
+</code></pre></div>
+
+<h3>Getting started</h3>
+<p>To test what happens when the Arduino disconnects from the WiFi network, I
+wrote some code to automatically disconnect every tenth time through Arduino's
+event loop, <code>loop()</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="nv">void</span><span class="w"> </span><span class="k">loop</span><span class="ss">()</span><span class="w"> </span>{
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="ss">(</span><span class="nv">i</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="ss">)</span><span class="w"> </span>{
+<span class="nv">Serial</span>.<span class="nv">println</span><span class="ss">(</span><span class="s2">&quot;\nPurposely disconnecting WiFi\n&quot;</span><span class="ss">)</span><span class="c1">;</span>
+<span class="nv">WiFi</span>.<span class="k">disconnect</span><span class="ss">()</span><span class="c1">;</span>
+<span class="nv">delay</span><span class="ss">(</span><span class="mi">5000</span><span class="ss">)</span><span class="c1">;</span>
+<span class="nv">WiFiSetup</span><span class="ss">()</span><span class="c1">;</span>
+<span class="w">  </span>}
+<span class="w">  </span><span class="nv">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="c1">;</span>
+}
+</code></pre></div>
+
+<p>What happens? The server restarts every time, but on a different socket - and
+it leaves the old socket in use. This means that after 4 tries (there are 4
+sockets) it can’t restart anymore. I also think it could be creating the
+strange client connection problems - because socket 0 is never closed, the
+client always tries to connect to it, but the server is actually on socket
+1... or 2... or 3...</p>
+<h4>Idea #1: Call <code>client.stop()</code></h4>
+<p>Another Hacker Schooler with more networking experience than I have thought
+that calling <code>client.stop()</code> might stop the server manually. His hypothesis
+was that Arduino’s 'client' is actually what most networking libraries call a
+'socket', and that stopping the client might close the socket.</p>
+<p>I wrote a simple sketch to test it, but it didn't work: <code>client.stop()</code> stops
+the client, but not the server. At least that's expected behavior!</p>
+<h4>Idea #2: Mimic solution to Arduino issue #1720</h4>
+<p>I found a relevant-seeming issue on Github: <a href="https://github.com/Arduino/Arduino/issues/1720">WiFi shield client does not
+release socket on connect
+fail</a>. The poster fixed the
+problem by editing <code>connect()</code> in WiFiClient.cpp, specifically by adding this
+single line to <code>WiFiClient::connect()</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="err">!</span><span class="n">connected</span><span class="p">())</span>
+<span class="err">{</span>
+<span class="o">//</span><span class="w"> </span><span class="k">Add</span><span class="w"> </span><span class="n">this</span>
+<span class="w">    </span><span class="nl">WiFiClass</span><span class="p">:</span><span class="err">:</span><span class="n">_state</span><span class="o">[</span><span class="n">_sock</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+<span class="o">//</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="k">add</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="err">}</span>
+</code></pre></div>
+
+<p>This line runs if the client fails to connect; it resets the socket to make it
+available for another client.</p>
+<p>My problem isn't exactly the same as this one - I'm dealing with a dropped
+connection, not a failed connect attempt, and with a server, not a client -
+but it seems similar enough to use as inspiration.</p>
+<p>It seems like I want something similar, but in some <code>disconnect()</code> method, so
+that the socket is closed when the WiFi disconnects.</p>
+<p>The WiFi shield does have a <code>disconnect()</code> method, located in WiFi.cpp, which
+then points to a method in utility/WiFi_drv.cpp. Great. <code>disconnect()</code> issues
+actual assembly commands. I really didn't want to debug Assembly (well, at
+least not that day). I moved on for the moment.</p>
+<h3>Some success! The server re-starts</h3>
+<p>With the help of #1720 above, I figured out that the state of the WiFi
+object's sockets is stored in an array called <code>_state</code>, and the port running
+on each socket is stored in an array called <code>_server_port</code>.</p>
+<p>If a socket is not in use, its state is -1 and its port is 0. If it's being
+used, its state is equal to the socket number and the port is the number of of
+whatever port it's running on. So if <code>_state</code> is <code>[-1, -1, 2, -1]</code> and
+<code>_server_port</code> is <code>[0, 0, 80, 0]</code>, that indicates that a server is using
+socket 2 and listening on port 80.</p>
+<p>These numbers weren't being reset when the WiFi disconnected, which meant that
+the server couldn't restart properly. To fix it, I created a <code>disconnect()</code>
+method in WiFiServer.cpp:</p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="n">void</span><span class="w"> </span><span class="nl">WiFiServer</span><span class="p">:</span><span class="err">:</span><span class="k">disconnect</span><span class="p">()</span><span class="w"> </span><span class="err">{</span>
+<span class="w">  </span><span class="nl">WiFiClass</span><span class="p">:</span><span class="err">:</span><span class="n">_state</span><span class="o">[</span><span class="n">_sock</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+<span class="w">  </span><span class="nl">WiFiClass</span><span class="p">:</span><span class="err">:</span><span class="n">_server_port</span><span class="o">[</span><span class="n">_sock</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="err">}</span>
+</code></pre></div>
+
+<p>This frees the socket the server was listening on by setting its state to -1
+and shuts down the port by resetting it from 80 to 0.</p>
+<p>Cool! That worked! Sort of. Now I can release the socket and port, and re-
+connect to them. The problem is that the server doesn’t actually restart.</p>
+<p>Fortunately, I discovered that this problem had a simple fix: delaying before
+restarting the WiFi. Adding the line <code>delay(10000);</code> before running
+<code>WiFiSetup()</code> does the trick:</p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="nv">void</span><span class="w"> </span><span class="k">loop</span><span class="ss">()</span><span class="w"> </span>{
+<span class="nv">Serial</span>.<span class="nv">println</span><span class="ss">(</span><span class="s2">&quot;\nPurposely disconnecting WiFi\n&quot;</span><span class="ss">)</span><span class="c1">;</span>
+<span class="nv">server</span>.<span class="k">disconnect</span><span class="ss">()</span><span class="c1">;</span>
+<span class="nv">WiFi</span>.<span class="k">disconnect</span><span class="ss">()</span><span class="c1">;</span>
+<span class="nv">delay</span><span class="ss">(</span><span class="mi">10000</span><span class="ss">)</span><span class="c1">;</span>
+<span class="nv">WiFiSetup</span><span class="ss">()</span><span class="c1">;</span>
+}
+</code></pre></div>
+
+<h3>Big problem: the client doesn't restart</h3>
+<p>This is where I got stuck: restarting the server after a client has connected
+to it. Even though <code>client.stop()</code> is always called before the WiFi is
+disconnected, things don't go smoothly.</p>
+<p>In my test sketches, I always examine the Arduino's sockets, ports, and server
+and client states before reconnecting, just to make sure they were reset
+properly. When I examine the client using <code>serverDrv.getClientState()</code>,
+everything - <em>everything</em> - hangs indefinitely:</p>
+<div class="highlight"><pre><span></span><code>    Purposely disconnecting WiFi
+
+********************************
+
+Initial socket status (before new connection):
+-1  0  s=0  c=
+</code></pre></div>
+
+<p>Even weirder is that the client doesn’t <em>always</em> get in the way - a couple of
+times, things have worked 100% perfectly (started server, sent message from
+client, disconnected WiFi, reconnected server, successfully sent a new message
+from client).</p>
+<p>Every time I mentioned to people that I was experiencing a non-deterministic
+bug, they started chanting, "Memory leak! Memory leak!". Fortunately, Arduino
+has a function, <code>freeMemory()</code>, for reporting its available memory. I added
+print statements everywhere to keep track of this, but found it never changed
+significantly.</p>
+<h4>The big problem: no handshake!</h4>
+<p>I added print statements to that <code>serverDrv.getClientState()</code> so I could see
+precisely where it got stuck. It's during the line
+<code>SpiDrv::waitForSlaveReady()</code>. All this does is instruct the Arduino to wait
+while a pin called <code>SLAVEREADY</code> - the Arduino-WiFi Shield handshake pin - is
+high.</p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="p">#</span><span class="nn">define</span><span class="w"> </span><span class="nt">waitSlaveReady</span><span class="o">()</span><span class="w"> </span><span class="o">(</span><span class="nt">digitalRead</span><span class="o">(</span><span class="nt">SLAVEREADY</span><span class="o">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nt">LOW</span><span class="o">)</span>
+<span class="nt">void</span><span class="w"> </span><span class="nt">SpiDrv</span><span class="p">::</span><span class="nd">waitForSlaveReady</span><span class="o">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="err">while</span><span class="w"> </span><span class="err">(!waitSlaveReady())</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>No matter how long I wait, that friggin slave just isn't ready. If this is the
+problem, I'm going to have to throw in the towel. There's no more code to
+debug - I'd have to get out datasheets and begin from there.</p>
+<hr>
+<h6>Category: <a href="/category/misc.html">misc</a>.</h6>
+<hr>
+<p><img alt="" src="/theme/img/headshot.png"></p>
+<h5>Links</h5>
+<p><a href="http://www.linkedin.com/in/katrinaellison">LinkedIn</a></p>
+<p><a href="http://www.github.com/katrinae">GitHub</a></p>
+<p><a href="http://www.slideshare.net/kellison00">SlideShare</a></p>
+<h5>Monthly Archives</h5>
+<p><a href="/posts/2015/12/">December 2015 (1)</a></p>
+<p><a href="/posts/2014/05/">May 2014 (2)</a></p>
+<p><a href="/posts/2014/04/">April 2014 (3)</a></p>
+<p><a href="/posts/2014/03/">March 2014 (2)</a></p>
+<p><a href="/posts/2014/02/">February 2014 (2)</a></p>
+<hr>
+<p>Powered by Pelican and based on a theme by <a href="http://hamaluik.com">Kenton
+Hamaluik</a>.</p>
+	<h6>Written by <a href="/author/.html"></a> on Tue 01 April 2014.</h6>
+</article>
+
+						</div>
+						<!-- End Main Content -->
+						<!-- Sidebar -->
+						<aside class="medium-3 hide-for-small-only columns">
+							<div class="panel">
+                                                                <ul class="side-nav">
+                                                                        <img src="/theme/img/headshot.png" />
+                                                                </ul>
+							</div>
+
+							<div class="panel">
+								<h5>Links</h5>
+								<ul class="side-nav">
+									<li><a href="http://www.linkedin.com/in/katrinaellison">LinkedIn</a></li>
+									<li><a href="http://www.github.com/katrinae">GitHub</a></li>
+									<li><a href="http://www.slideshare.net/kellison00">SlideShare</a></li>
+								</ul>
+							</div>
+
+							<div class="panel">
+								<h5>Monthly Archives</h5>
+								<ul class="side-nav">
+											<li><a href="/posts/2015/12/">December 2015 (1)</a></li>
+											<li><a href="/posts/2014/05/">May 2014 (3)</a></li>
+											<li><a href="/posts/2014/04/">April 2014 (4)</a></li>
+											<li><a href="/posts/2014/03/">March 2014 (2)</a></li>
+											<li><a href="/posts/2014/02/">February 2014 (2)</a></li>
+								</ul>
+							</div>
+
+						</aside>
+						<!-- End Sidebar -->
+					</div>
+
+					<!-- Footer -->
+					<footer class="row">
+						<div class="medium-9 small-12">
+							<p class="text-center">Powered by <a href="http://getpelican.com">Pelican</a> and <a href="http://foundation.zurb.com/">Zurb Foundation</a>. Theme by <a href="http://hamaluik.com">Kenton Hamaluik</a>.</p>
+						</div>
+					</footer>
+					<!-- End Footer -->
+				</section>
+				<a class="exit-off-canvas"></a>
+			</div><!--off-canvas inner-->
+		</div><!--off-canvas wrap-->
+
+		<script src="/theme/js/jquery.js"></script>
+		<script src="/theme/js/foundation.min.js"></script>
+		<script>
+			$(document).foundation();
+		</script>
+	</body>
+</html>
