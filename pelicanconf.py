@@ -4,3 +4,7 @@ FOUNDATION_FOOTER_TEXT = 'Powered by <a href="http://getpelican.com">Pelican</a>
 FOUNDATION_PYGMENT_THEME = 'monokai'
 MONTH_ARCHIVE_SAVE_AS = 'True'
 STATIC_PATHS = ['theme/img']
+LINKS = [['LinkedIn', 'http://www.linkedin.com/in/katrinaellison'],
+         ['GitHub', 'http://www.github.com/katrinae'],
+         ['SlideShare', 'http://www.slideshare.net/kellison00']
+        ]
