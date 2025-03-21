@@ -1,33 +1,8 @@
 Title: Projects
 
-# Katrina Ellison Geltman
-
-  * [Home]()
-  * Pages
-  * [About](/pages/about-me.html)
-  * [Projects](/pages/projects.html)
-  * Links
-  * [LinkedIn](http://www.linkedin.com/in/katrinaellison)
-  * [GitHub](http://www.github.com/katrinae)
-  * [SlideShare](http://www.slideshare.net/kellison00)
-  * Monthly Archives
-  * [December 2015 (1)](/posts/2015/12/)
-  * [May 2014 (2)](/posts/2014/05/)
-  * [April 2014 (3)](/posts/2014/04/)
-  * [March 2014 (2)](/posts/2014/03/)
-  * [February 2014 (2)](/posts/2014/02/)
-    * # [Katrina Ellison Geltman](/)
-
-    * [About](/pages/about-me.html)
-    * [Projects](/pages/projects.html)
-    * [Archives](/archives.html)
-
-## Projects
-
 #### Hacker School
 
-##### [reGrouper](http://github.com/katrinae/grouper) and [Seating Chart
-Creator](http://github.com/katrinae/SeatingChartCreator) (2014)
+##### [reGrouper](http://github.com/katrinae/grouper) and [Seating Chart Creator](http://github.com/katrinae/SeatingChartCreator) (2014)
 
 reGrouper is a tool for placing people in groups across multiple time periods
 (for example, assigning students to reading groups that switch each month) in
@@ -64,28 +39,4 @@ obsolete.
 
 ![](/theme/img/headshot.png)
 
-##### Links
-
-[LinkedIn](http://www.linkedin.com/in/katrinaellison)
-
-[GitHub](http://www.github.com/katrinae)
-
-[SlideShare](http://www.slideshare.net/kellison00)
-
-##### Monthly Archives
-
-[December 2015 (1)](/posts/2015/12/)
-
-[May 2014 (2)](/posts/2014/05/)
-
-[April 2014 (3)](/posts/2014/04/)
-
-[March 2014 (2)](/posts/2014/03/)
-
-[February 2014 (2)](/posts/2014/02/)
-
-* * *
-
-Powered by Pelican and based on a theme by [Kenton
-Hamaluik](http://hamaluik.com).
 
