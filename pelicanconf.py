@@ -1,6 +1,6 @@
 THEME = './themes/foundation-default-colours'
 SITENAME = "Katrina Ellison Geltman"
-FOUNDATION_FOOTER_TEXT = 'Powered by <a href="http://getpelican.com">Pelican</a> and <a href="http://foundation.zurb.com/">Zurb Foundation</a>. Theme by <a href="http://hamaluik.com">Kenton Hamaluik</a>.'
+FOUNDATION_FOOTER_TEXT = ' '
 FOUNDATION_PYGMENT_THEME = 'bw'
 MONTH_ARCHIVE_SAVE_AS = 'posts/{date:%Y}/{date:%m}/index.html'
 STATIC_PATHS = ['theme/img']
