@@ -19,6 +19,9 @@ meta.foundation-mq-xxlarge {
   font-family: "/only screen and (min-width:120.063em)/";
   width: 120.063em; }
 
+code {
+    margin-bottom: 1.25em; }
+
 *,
 *:before,
 *:after {
@@ -28,7 +31,7 @@ meta.foundation-mq-xxlarge {
 
 html,
 body {
-  font-size: 100%; }
+  font-size: 1rem; }
 
 body {
   background: white;
@@ -2943,6 +2946,7 @@ p {
   font-size: 1rem;
   line-height: 1.6;
   margin-bottom: 1.25rem;
+  margin-top: 1rem;
   text-rendering: optimizeLegibility; }
   p aside {
     font-size: 0.875rem;
@@ -2956,7 +2960,7 @@ h1, h2, h3, h4, h5, h6 {
   font-style: normal;
   color: #222222;
   text-rendering: optimizeLegibility;
-  margin-top: 0.2rem;
+  margin-top: 2rem;
   margin-bottom: 0.5rem;
   line-height: 1.4; }
   h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
@@ -3004,10 +3008,6 @@ small {
   font-size: 60%;
   line-height: inherit; }
 
-code {
-  font-family: Consolas, "Liberation Mono", Courier, monospace;
-  font-weight: bold;
-  color: #bb260d; }
 
 /* Lists */
 ul,
