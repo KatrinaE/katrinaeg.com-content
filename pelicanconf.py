@@ -8,3 +8,4 @@ LINKS = [['LinkedIn', 'http://www.linkedin.com/in/katrinaellison'],
          ['GitHub', 'http://www.github.com/katrinae'],
          ['SlideShare', 'http://www.slideshare.net/kellison00']
         ]
+FOUNDATION_ALTERNATE_FONTS = 'True'

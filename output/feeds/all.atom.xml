@@ -1074,22 +1074,7 @@ high.&lt;/p&gt;
 problem, I'm going to have to throw in the towel. There's no more code to
 debug - I'd have to get out datasheets and begin from there.&lt;/p&gt;
 &lt;hr&gt;
-&lt;h6&gt;Category: &lt;a href="/category/misc.html"&gt;misc&lt;/a&gt;.&lt;/h6&gt;
-&lt;hr&gt;
-&lt;p&gt;&lt;img alt="" src="/theme/img/headshot.png"&gt;&lt;/p&gt;
-&lt;h5&gt;Links&lt;/h5&gt;
-&lt;p&gt;&lt;a href="http://www.linkedin.com/in/katrinaellison"&gt;LinkedIn&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="http://www.github.com/katrinae"&gt;GitHub&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="http://www.slideshare.net/kellison00"&gt;SlideShare&lt;/a&gt;&lt;/p&gt;
-&lt;h5&gt;Monthly Archives&lt;/h5&gt;
-&lt;p&gt;&lt;a href="/posts/2015/12/"&gt;December 2015 (1)&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="/posts/2014/05/"&gt;May 2014 (2)&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="/posts/2014/04/"&gt;April 2014 (3)&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="/posts/2014/03/"&gt;March 2014 (2)&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="/posts/2014/02/"&gt;February 2014 (2)&lt;/a&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;Powered by Pelican and based on a theme by &lt;a href="http://hamaluik.com"&gt;Kenton
-Hamaluik&lt;/a&gt;.&lt;/p&gt;</content><category term="misc"></category></entry><entry><title>How to Update the Arduino WiFi Shield Firmware</title><link href="/how-to-update-the-arduino-wifi-shield-firmware.html" rel="alternate"></link><published>2014-03-21T00:00:00+00:00</published><updated>2014-03-21T00:00:00+00:00</updated><author><name></name></author><id>tag:None,2014-03-21:/how-to-update-the-arduino-wifi-shield-firmware.html</id><summary type="html">&lt;p&gt;The firmware that ships with the Arduino WiFi shield (v. 1.0.0) doesn't work
+&lt;h6&gt;Category: &lt;a href="/category/misc.html"&gt;misc&lt;/a&gt;.&lt;/h6&gt;</content><category term="misc"></category></entry><entry><title>How to Update the Arduino WiFi Shield Firmware</title><link href="/how-to-update-the-arduino-wifi-shield-firmware.html" rel="alternate"></link><published>2014-03-21T00:00:00+00:00</published><updated>2014-03-21T00:00:00+00:00</updated><author><name></name></author><id>tag:None,2014-03-21:/how-to-update-the-arduino-wifi-shield-firmware.html</id><summary type="html">&lt;p&gt;The firmware that ships with the Arduino WiFi shield (v. 1.0.0) doesn't work
 properly. Fortunately, they've written new firmware (v. 1.1.0). Unfortunately,
 updating it is a bit tricky. I found both the &lt;a href="http://arduino.cc/en/Hacking/WiFiShieldFirmwareUpgrading"&gt;official Arduino
 instructions&lt;/a&gt; and
