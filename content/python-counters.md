@@ -1,5 +1,6 @@
 Title: Counting Overlapping Elements in Python
 Date: Wed 16 April 2014
+Author: Katrina Ellison Geltman
 
 Say you have a list of lists, like:
 

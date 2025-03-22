@@ -1,5 +1,6 @@
 Title: Python Counter Performance
 Date: Wed 16 April 2014
+Author: Katrina Ellison Geltman
 
 Python's Counters are a subclass of dictionaries used for tallying how many
 times elements occur in an iterable data structure like a list. I'm writing an

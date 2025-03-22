@@ -1,5 +1,6 @@
 Title: Hacker School: Weeks 1 & 2
 Date: Tue 18 February 2014
+Author: Katrina Ellison Geltman
 
 ### What is Hacker School?
 

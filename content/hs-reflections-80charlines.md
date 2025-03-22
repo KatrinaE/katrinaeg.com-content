@@ -2,6 +2,7 @@ Title: Hacker School Reflections
 Date: 2014-05-30
 Category: Hacker School
 Tags: reflections, goals, learning
+Author: Katrina Ellison Geltman
 
 ## Hacker School Reflections
 When I arrived at Hacker School, I laid out the following goals for myself:

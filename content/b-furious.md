@@ -1,5 +1,6 @@
 Title: B_FURIOUS
 Date: Wed 16 April 2014
+Author: Katrina Ellison Geltman
 
 This is the code and simple circuit diagram for a wifi-enabled remote control
 car driven by an Arduino Uno + Arduino WiFi Shield. The base for our car is a

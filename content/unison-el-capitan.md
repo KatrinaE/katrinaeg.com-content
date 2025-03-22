@@ -1,5 +1,6 @@
 Title: Installing Unison 2.40.63 on OS X El Capitan
 Date: December 27, 2015
+Author: Katrina Ellison Geltman
 
 ##### Sun 27 December 2015
 

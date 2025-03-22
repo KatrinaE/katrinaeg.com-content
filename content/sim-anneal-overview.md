@@ -1,5 +1,6 @@
 Title: The Simulated Annealing Algorithm
 Date: Thu 20 February 2014
+Author: Katrina Ellison Geltman
 
 Simulated annealing is a method for finding a good (not necessarily perfect)
 solution to an optimization problem. If you're in a situation where you want

@@ -1,5 +1,6 @@
 Title: Debugging the Arduino WiFi Shield
 Date: Tue 01 April 2014
+Author: Katrina Ellison Geltman
 
 ### The Problem
 

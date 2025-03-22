@@ -1,5 +1,6 @@
 Title: My Seating Chart Software Saga
 Date: Sun 02 March 2014
+Author: Katrina Ellison Geltman
 
 For the first few weeks of Hacker School, I've been working on a project that
 began last summer, when I volunteered to help out one of my husband's co-

@@ -1,5 +1,6 @@
 Title: A Python LRU Cache
 Date: Mon 05 May 2014
+Author: Katrina Ellison Geltman
 
 Caches are structures for storing data for future use so that it doesn't have
 to be re-calculated each time it is accessed. You might be familiar with them

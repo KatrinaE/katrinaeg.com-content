@@ -1,5 +1,6 @@
 Title: How to Update the Arduino WiFi Shield Firmware
 Date: Fri 21 March 2014
+Author: Katrina Ellison Geltman
 
 The firmware that ships with the Arduino WiFi shield (v. 1.0.0) doesn't work
 properly. Fortunately, they've written new firmware (v. 1.1.0). Unfortunately,

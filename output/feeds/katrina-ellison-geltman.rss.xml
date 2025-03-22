@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"><channel><title>Katrina Ellison Geltman - Katrina Ellison Geltman</title><link>/</link><description></description><lastBuildDate>Sun, 27 Dec 2015 00:00:00 +0000</lastBuildDate><item><title>Installing Unison 2.40.63 on OS X El Capitan</title><link>/installing-unison-24063-on-os-x-el-capitan.html</link><description>&lt;h5&gt;Sun 27 December 2015&lt;/h5&gt;
+&lt;p&gt;I recently needed to install Unison version 2.40.63 on a machine running OS X
+10.11 El Capitan. There are no prebuilt binaries available (except for the GUI
+versions listed in "The Easy Alternative" below), so I had to install from
+source. It was …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Katrina Ellison Geltman</dc:creator><pubDate>Sun, 27 Dec 2015 00:00:00 +0000</pubDate><guid isPermaLink="false">tag:None,2015-12-27:/installing-unison-24063-on-os-x-el-capitan.html</guid><category>misc</category></item><item><title>Hacker School Reflections</title><link>/hacker-school-reflections.html</link><description>&lt;h2&gt;Hacker School Reflections&lt;/h2&gt;
+&lt;p&gt;When I arrived at Hacker School, I laid out the following goals for myself:&lt;/p&gt;
+&lt;p&gt;While I'm here, I want to:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Fill in some gaps
+(learn a statically typed language, use git correctly),&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Finish a 'real' project, &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Explore some cool stuff (right now I'm curious
+about algorithms, the …&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Katrina Ellison Geltman</dc:creator><pubDate>Fri, 30 May 2014 00:00:00 +0000</pubDate><guid isPermaLink="false">tag:None,2014-05-30:/hacker-school-reflections.html</guid><category>Hacker School</category><category>reflections</category><category>goals</category><category>learning</category></item><item><title>Hacker School Reflections Old</title><link>/hacker-school-reflections-old.html</link><description>&lt;h2&gt;Hacker School Reflections&lt;/h2&gt;
+&lt;p&gt;When I arrived at Hacker School, I laid out the following goals for myself:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;While I'm here, I want to:
+- Fill in some gaps (learn a statically typed language, use git correctly),
+- Finish a 'real' project,
+- Explore some cool stuff (right now I'm curious about algorithms, the …&lt;/p&gt;&lt;/blockquote&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Katrina Ellison Geltman</dc:creator><pubDate>Fri, 30 May 2014 00:00:00 +0000</pubDate><guid isPermaLink="false">tag:None,2014-05-30:/hacker-school-reflections-old.html</guid><category>Hacker School</category><category>reflections</category><category>goals</category><category>learning</category></item><item><title>A Python LRU Cache</title><link>/a-python-lru-cache.html</link><description>&lt;p&gt;Caches are structures for storing data for future use so that it doesn't have
+to be re-calculated each time it is accessed. You might be familiar with them
+in the context of the web (your browser can cache a page so that it doesn't
+need to be reloaded the next …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Katrina Ellison Geltman</dc:creator><pubDate>Mon, 05 May 2014 00:00:00 +0000</pubDate><guid isPermaLink="false">tag:None,2014-05-05:/a-python-lru-cache.html</guid><category>misc</category></item><item><title>B_FURIOUS</title><link>/b_furious.html</link><description>&lt;p&gt;This is the code and simple circuit diagram for a wifi-enabled remote control
+car driven by an Arduino Uno + Arduino WiFi Shield. The base for our car is a
+toy RC car called the &lt;a href="http://www.toysrus.com/buy/rc-trucks-
+buggies-off-road/fast-lane-b-furious-radio-control-vehicle-49-mhz-colors-
+vary-5f5e1f1-12456731"&gt;B-Furious&lt;/a&gt;, which is driven by one DC motor and can move forwards
+or backwards, but cannot …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Katrina Ellison Geltman</dc:creator><pubDate>Wed, 16 Apr 2014 00:00:00 +0000</pubDate><guid isPermaLink="false">tag:None,2014-04-16:/b_furious.html</guid><category>misc</category></item><item><title>Counting Overlapping Elements in Python</title><link>/counting-overlapping-elements-in-python.html</link><description>&lt;p&gt;Say you have a list of lists, like:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;    matrix = [[1, 2, 3], [4, 5, 6], [1, 2, 6]]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;You want to know how many times pairs of numbers occur in the same list, or
+overlap. In the example above, you'd have:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;*&lt;/span&gt; 1 &amp;amp; 2: paired twice
+&lt;span class="k"&gt;*&lt;/span&gt; 1 &amp;amp; 3: paired once
+&lt;span class="k"&gt;*&lt;/span&gt; 2 …&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Katrina Ellison Geltman</dc:creator><pubDate>Wed, 16 Apr 2014 00:00:00 +0000</pubDate><guid isPermaLink="false">tag:None,2014-04-16:/counting-overlapping-elements-in-python.html</guid><category>misc</category></item><item><title>Python Counter Performance</title><link>/python-counter-performance.html</link><description>&lt;p&gt;Python's Counters are a subclass of dictionaries used for tallying how many
+times elements occur in an iterable data structure like a list. I'm writing an
+application that makes heavy use of Counters - like creating 10,000,000
+counters in one run - and I found that they were a performance …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Katrina Ellison Geltman</dc:creator><pubDate>Wed, 16 Apr 2014 00:00:00 +0000</pubDate><guid isPermaLink="false">tag:None,2014-04-16:/python-counter-performance.html</guid><category>misc</category></item><item><title>Debugging the Arduino WiFi Shield</title><link>/debugging-the-arduino-wifi-shield.html</link><description>&lt;h3&gt;The Problem&lt;/h3&gt;
+&lt;p&gt;After disconnecting from the internet, the Arduno WiFi shield (sitting atop an
+Uno) is able to reconnect, but cannot re-start a server.&lt;/p&gt;
+&lt;p&gt;For example, here's the output of running the built-in &lt;code&gt;SimpleWebServerWiFi&lt;/code&gt;
+sketch (you can find it in the Arduino IDE under File &amp;gt; Examples &amp;gt; WiFi &amp;gt;
+SimpleWebServerWiFi).&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;    &lt;span class="nv"&gt;Attempting&lt;/span&gt; &lt;span class="s s-Atom"&gt;to …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Katrina Ellison Geltman</dc:creator><pubDate>Tue, 01 Apr 2014 00:00:00 +0000</pubDate><guid isPermaLink="false">tag:None,2014-04-01:/debugging-the-arduino-wifi-shield.html</guid><category>misc</category></item><item><title>How to Update the Arduino WiFi Shield Firmware</title><link>/how-to-update-the-arduino-wifi-shield-firmware.html</link><description>&lt;p&gt;The firmware that ships with the Arduino WiFi shield (v. 1.0.0) doesn't work
+properly. Fortunately, they've written new firmware (v. 1.1.0). Unfortunately,
+updating it is a bit tricky. I found both the &lt;a href="http://arduino.cc/en/Hacking/WiFiShieldFirmwareUpgrading"&gt;official Arduino
+instructions&lt;/a&gt; and
+the &lt;a href="http://flashgamer.com/arduino/comments/how-to-update-the-
+official-arduino-wifi-shield"&gt;instructions at
+Flashgamer.com&lt;/a&gt; helpful (particularly the latter), but …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Katrina Ellison Geltman</dc:creator><pubDate>Fri, 21 Mar 2014 00:00:00 +0000</pubDate><guid isPermaLink="false">tag:None,2014-03-21:/how-to-update-the-arduino-wifi-shield-firmware.html</guid><category>misc</category></item><item><title>My Seating Chart Software Saga</title><link>/my-seating-chart-software-saga.html</link><description>&lt;p&gt;For the first few weeks of Hacker School, I've been working on a project that
+began last summer, when I volunteered to help out one of my husband's co-
+workers. She's responsible for putting together the seating chart for a five-
+day-long conference every year. She spends a week obsessing …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Katrina Ellison Geltman</dc:creator><pubDate>Sun, 02 Mar 2014 00:00:00 +0000</pubDate><guid isPermaLink="false">tag:None,2014-03-02:/my-seating-chart-software-saga.html</guid><category>misc</category></item><item><title>The Simulated Annealing Algorithm</title><link>/the-simulated-annealing-algorithm.html</link><description>&lt;p&gt;Simulated annealing is a method for finding a good (not necessarily perfect)
+solution to an optimization problem. If you're in a situation where you want
+to maximize or minimize something, your problem can likely be tackled with
+simulated annealing.&lt;/p&gt;
+&lt;p&gt;The traveling salesman problem is a good example: the salesman is …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Katrina Ellison Geltman</dc:creator><pubDate>Thu, 20 Feb 2014 00:00:00 +0000</pubDate><guid isPermaLink="false">tag:None,2014-02-20:/the-simulated-annealing-algorithm.html</guid><category>misc</category></item><item><title>Hacker School: Weeks 1 &amp; 2</title><link>/hacker-school-weeks-1-2.html</link><description>&lt;h3&gt;What is Hacker School?&lt;/h3&gt;
+&lt;p&gt;After many times trying and utterly failing to communicate to people what
+Hacker School is, I've discovered that it's best to cut to the chase:&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Hacker School is 60 people, in a room, doing whatever they want.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;That's it. It's not a 'program' with any sort …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Katrina Ellison Geltman</dc:creator><pubDate>Tue, 18 Feb 2014 00:00:00 +0000</pubDate><guid isPermaLink="false">tag:None,2014-02-18:/hacker-school-weeks-1-2.html</guid><category>misc</category></item></channel></rss>
