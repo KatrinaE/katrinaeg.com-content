@@ -3920,7 +3920,8 @@ nav.tab-bar {
     line-height: 2.8125rem;
     margin: 0; }
   nav.tab-bar h1, nav.tab-bar h2, nav.tab-bar h3, nav.tab-bar h4 {
-    font-size: 1.125rem; }
+    font-size: 1.125rem;
+    font-family: Agbalumo; }
 
 section.left-small {
   border-right: solid 1px #1a1a1a;
