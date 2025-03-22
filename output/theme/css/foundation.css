@@ -2853,7 +2853,7 @@ ul.pagination {
     .side-nav li a {
       display: block;
       color: #000000;
-      text-decoration: underline; }
+      text-decoration: none; }
     .side-nav li.active > a:first-child {
       color: #4d4d4d;
       font-weight: normal;
@@ -4005,7 +4005,8 @@ ul.off-canvas-list {
     display: block;
     padding: 0.66667rem;
     color: rgba(255, 255, 255, 0.7);
-    border-bottom: 1px solid #262626; }
+    border-bottom: 1px solid #262626;
+    text-decoration: none; }
 
 .move-right > .inner-wrap {
   -webkit-transform: translate3d(250px, 0, 0);
