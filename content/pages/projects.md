@@ -36,7 +36,3 @@ numbers. It was built for one of Hacker School's Friday code challenges.
 AutoLex is a Django module enabling automatic translations via the Google
 Translate API. Google has since shut down this service, rendering the module
 obsolete.
-
-![](/theme/img/headshot.png)
-
-

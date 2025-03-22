@@ -10,6 +10,4 @@ My most recent educational experience was at [Recurse
 Center](https://www.recurse.com). I have a degree in mechanical engineering
 from MIT.
 
-![](/theme/img/headshot.png)
-
 
