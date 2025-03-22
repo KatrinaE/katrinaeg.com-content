@@ -1,6 +1,7 @@
 Title: Installing Unison 2.40.63 on OS X El Capitan
 Date: December 27, 2015
 Author: Katrina Ellison Geltman
+Slug: unison-el-capitan
 
 I recently needed to install Unison version 2.40.63 on a machine running OS X
 10.11 El Capitan. There are no prebuilt binaries available (except for the GUI

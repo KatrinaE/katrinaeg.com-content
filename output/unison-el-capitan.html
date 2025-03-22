@@ -201,12 +201,13 @@ prevents it from building correctly on El Capitan. To fix it, you need to
 update "10.5" to "10.11" everywhere it appears in the code. Fortunately, there
 are not too many places to update:</p>
 <ul>
-<li>In <strong>./Makefile.OCaml</strong> , line 183</li>
-</ul>
-<ul><li>Old line: `MINOSXVERSION=10.5`</li>
-<li>New line: `MINOSXVERSION=10.11`</li></ul>
-
+<li>
+<p>In <strong>./Makefile.OCaml</strong> , line 183</p>
 <ul>
+<li>Old line: <code>MINOSXVERSION=10.5</code></li>
+<li>New line: <code>MINOSXVERSION=10.11</code></li>
+</ul>
+</li>
 <li>
 <p>In <strong>./uimacnew/uimacnew.xcodeproj/project.pbxproj</strong> , lines 676, 686, and 696</p>
 <ul>

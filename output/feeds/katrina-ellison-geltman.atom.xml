@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Katrina Ellison Geltman - Katrina Ellison Geltman</title><link href="/" rel="alternate"></link><link href="/feeds/katrina-ellison-geltman.atom.xml" rel="self"></link><id>/</id><updated>2015-12-27T00:00:00+00:00</updated><entry><title>Installing Unison 2.40.63 on OS X El Capitan</title><link href="/installing-unison-24063-on-os-x-el-capitan.html" rel="alternate"></link><published>2015-12-27T00:00:00+00:00</published><updated>2015-12-27T00:00:00+00:00</updated><author><name>Katrina Ellison Geltman</name></author><id>tag:None,2015-12-27:/installing-unison-24063-on-os-x-el-capitan.html</id><summary type="html">&lt;p&gt;I recently needed to install Unison version 2.40.63 on a machine running OS X
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Katrina Ellison Geltman - Katrina Ellison Geltman</title><link href="/" rel="alternate"></link><link href="/feeds/katrina-ellison-geltman.atom.xml" rel="self"></link><id>/</id><updated>2015-12-27T00:00:00+00:00</updated><entry><title>Installing Unison 2.40.63 on OS X El Capitan</title><link href="/unison-el-capitan.html" rel="alternate"></link><published>2015-12-27T00:00:00+00:00</published><updated>2015-12-27T00:00:00+00:00</updated><author><name>Katrina Ellison Geltman</name></author><id>tag:None,2015-12-27:/unison-el-capitan.html</id><summary type="html">&lt;p&gt;I recently needed to install Unison version 2.40.63 on a machine running OS X
 10.11 El Capitan. There are no prebuilt binaries available (except for the GUI
 versions listed in "The Easy Alternative" below), so I had to install from
 source. It was a bit of a …&lt;/p&gt;</summary><content type="html">&lt;p&gt;I recently needed to install Unison version 2.40.63 on a machine running OS X
@@ -102,12 +102,13 @@ prevents it from building correctly on El Capitan. To fix it, you need to
 update "10.5" to "10.11" everywhere it appears in the code. Fortunately, there
 are not too many places to update:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;In &lt;strong&gt;./Makefile.OCaml&lt;/strong&gt; , line 183&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ul&gt;&lt;li&gt;Old line: `MINOSXVERSION=10.5`&lt;/li&gt;
-&lt;li&gt;New line: `MINOSXVERSION=10.11`&lt;/li&gt;&lt;/ul&gt;
-
+&lt;li&gt;
+&lt;p&gt;In &lt;strong&gt;./Makefile.OCaml&lt;/strong&gt; , line 183&lt;/p&gt;
 &lt;ul&gt;
+&lt;li&gt;Old line: &lt;code&gt;MINOSXVERSION=10.5&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;New line: &lt;code&gt;MINOSXVERSION=10.11&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;In &lt;strong&gt;./uimacnew/uimacnew.xcodeproj/project.pbxproj&lt;/strong&gt; , lines 676, 686, and 696&lt;/p&gt;
 &lt;ul&gt;

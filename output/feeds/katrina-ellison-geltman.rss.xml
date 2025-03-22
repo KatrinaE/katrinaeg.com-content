@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Katrina Ellison Geltman - Katrina Ellison Geltman</title><link>/</link><description></description><lastBuildDate>Sun, 27 Dec 2015 00:00:00 +0000</lastBuildDate><item><title>Installing Unison 2.40.63 on OS X El Capitan</title><link>/installing-unison-24063-on-os-x-el-capitan.html</link><description>&lt;p&gt;I recently needed to install Unison version 2.40.63 on a machine running OS X
+<rss version="2.0"><channel><title>Katrina Ellison Geltman - Katrina Ellison Geltman</title><link>/</link><description></description><lastBuildDate>Sun, 27 Dec 2015 00:00:00 +0000</lastBuildDate><item><title>Installing Unison 2.40.63 on OS X El Capitan</title><link>/unison-el-capitan.html</link><description>&lt;p&gt;I recently needed to install Unison version 2.40.63 on a machine running OS X
 10.11 El Capitan. There are no prebuilt binaries available (except for the GUI
 versions listed in "The Easy Alternative" below), so I had to install from
-source. It was a bit of a …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Katrina Ellison Geltman</dc:creator><pubDate>Sun, 27 Dec 2015 00:00:00 +0000</pubDate><guid isPermaLink="false">tag:None,2015-12-27:/installing-unison-24063-on-os-x-el-capitan.html</guid><category>misc</category></item><item><title>Hacker School Reflections</title><link>/hacker-school-reflections.html</link><description>&lt;h2&gt;Hacker School Reflections&lt;/h2&gt;
+source. It was a bit of a …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Katrina Ellison Geltman</dc:creator><pubDate>Sun, 27 Dec 2015 00:00:00 +0000</pubDate><guid isPermaLink="false">tag:None,2015-12-27:/unison-el-capitan.html</guid><category>misc</category></item><item><title>Hacker School Reflections</title><link>/hacker-school-reflections.html</link><description>&lt;h2&gt;Hacker School Reflections&lt;/h2&gt;
 &lt;p&gt;When I arrived at Hacker School, I laid out the following goals for myself:&lt;/p&gt;
 &lt;p&gt;While I'm here, I want to:&lt;/p&gt;
 &lt;ul&gt;
