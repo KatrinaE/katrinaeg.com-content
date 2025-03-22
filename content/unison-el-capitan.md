@@ -2,8 +2,6 @@ Title: Installing Unison 2.40.63 on OS X El Capitan
 Date: December 27, 2015
 Author: Katrina Ellison Geltman
 
-##### Sun 27 December 2015
-
 I recently needed to install Unison version 2.40.63 on a machine running OS X
 10.11 El Capitan. There are no prebuilt binaries available (except for the GUI
 versions listed in "The Easy Alternative" below), so I had to install from
@@ -22,7 +20,7 @@ Protection](https://support.apple.com/en-us/HT204899), which prevents writing
 to /usr/bin/, even with sudo.
 
     
-        $ sudo /Applications/Unison.app/Contents/MacOS/cltool 
+    $ sudo /Applications/Unison.app/Contents/MacOS/cltool 
     cp: /usr/bin/unison: Operation not permitted
     
 
@@ -37,9 +35,9 @@ script.
 
 Prerequisites:
 
-    * **Xcode** (download from the [App Store](https://itunes.apple.com/us/app/xcode/id497799835?mt=12)). I used version 7.2. _Note: you need the full Xcode, not just the command line tools._
-    * An **OCaml compiler** (install via Homebrew; see instructions below)
-    * **Unison 2.40.63 source code** tarball (download 'unison-2.40.63.tar.gz' from [the official source](http://www.seas.upenn.edu/~bcpierce/unison//download/releases/unison-2.40.63/))
+- **Xcode** (download from the [App Store](https://itunes.apple.com/us/app/xcode/id497799835?mt=12)). I used version 7.2. _Note: you need the full Xcode, not just the command line tools._
+- An **OCaml compiler** (install via Homebrew; see instructions below)
+- **Unison 2.40.63 source code** tarball (download 'unison-2.40.63.tar.gz' from [the official source](http://www.seas.upenn.edu/~bcpierce/unison//download/releases/unison-2.40.63/))
 
 ##### Xcode
 
@@ -58,7 +56,7 @@ OCaml compiler. However, the OCaml package manager, OPAM, is available via
 Homebrew and comes with a compiler.
 
     
-        $ brew install opam
+    $ brew install opam
     
 
 Unfortunately, OPAM's default compiler - version 4.02.3 - does not build
@@ -69,7 +67,7 @@ most recent compiler version that worked for me was 4.01.0, so tell OPAM to
 use that.
 
     
-        $ opam init --comp 4.01.0
+    $ opam init --comp 4.01.0
     
 
 OPAM will ask you to let it modify `~/.bash_profile` and `~/.ocamlinit` so
@@ -79,7 +77,7 @@ to make life easier.
 Once OPAM is installed, activate it and verify that it works.
 
     
-        $ eval `opam config env`
+    $ eval `opam config env`
     $ opam --version
     1.2.2
     $ ocaml -version
@@ -94,14 +92,14 @@ installation. Fortunately, this is easy to do. For example, to switch to
 version 3.12.0 of the compiler, run
 
     
-        $ opam switch 3.12.0
+    $ opam switch 3.12.0
     $ eval `opam config env`
     
 
 To see all available compiler versions, use
 
     
-        $ opam switch list
+    $ opam switch list
     
 
 You'll need to rebuild Unison after you switch compilers.
@@ -114,7 +112,7 @@ If you'd like to keep the source code after installation, move it to wherever
 you'd like to put it. (I usually use /usr/local/src).
 
     
-        $ tar -C /usr/local/src -zxvf ~/Downloads/unison-2.40.63.tar.gz
+    $ tar -C /usr/local/src -zxvf ~/Downloads/unison-2.40.63.tar.gz
     $ cd /usr/local/src/unison-2.40.63/
     
 
@@ -122,7 +120,7 @@ If, on the other hand, you're planning to delete it once the build is
 complete, just leave the source code in ~/Downloads.
 
     
-        $ cd ~/Downloads
+    $ cd ~/Downloads
     $ tar -zxvf unison-2.40.63.tar.gz
     $ cd unison-2.40.63
     
@@ -134,33 +132,32 @@ prevents it from building correctly on El Capitan. To fix it, you need to
 update "10.5" to "10.11" everywhere it appears in the code. Fortunately, there
 are not too many places to update:
 
-    * In **./Makefile.OCaml** , line 183
+- In **./Makefile.OCaml** , line 183
+    - Old line: `MINOSXVERSION=10.5`
+    - New line: `MINOSXVERSION=10.11`
 
-      * Old line: `MINOSXVERSION=10.5`
-      * New line: `MINOSXVERSION=10.11`
-    * In **./uimacnew/uimacnew.xcodeproj/project.pbxproj** , lines 676, 686, and 696
+- In **./uimacnew/uimacnew.xcodeproj/project.pbxproj** , lines 676, 686, and 696
+    - Old line: `SDKROOT = /Developer/SDKs/MacOSX10.5.sdk;`
+    - New line: `SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk;`
+    - Note: this is the default location of the OS X 10.11 SDK when Xcode is installed from the Mac app store. It may be somewhere else on your system.
 
-      * Old line: `SDKROOT = /Developer/SDKs/MacOSX10.5.sdk;`
-      * New line: `SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk;`
-      * Note: this is the default location of the OS X 10.11 SDK when Xcode is installed from the Mac app store. It may be somewhere else on your system.
-    * In **./uimacnew09/uimacnew.xcodeproj/project.pbxproj** , lines 702, 713, and 724
-
-      * Old line: `SDKROOT = macosx10.5;`
-      * New line: `SDKROOT = macosx10.11;`
+- In **./uimacnew09/uimacnew.xcodeproj/project.pbxproj** , lines 702, 713, and 724
+    - Old line: `SDKROOT = macosx10.5;`
+    - New line: `SDKROOT = macosx10.11;`
 
 #### Step 3: Building
 
 It's finally time to build the binary.
 
     
-        $ cd /usr/local/src/unison-2.40.63      # Or wherever you put the source code in step 1
+    $ cd /usr/local/src/unison-2.40.63      # Or wherever you put the source code in step 1
     $ make UISTYLE=text
     
 
 If the build fails, clean up after it with 'make clean' before trying again:
 
     
-        $ make clean
+    $ make clean
     
 
 Running Unison without any arguments should bring up the help message. Note
@@ -168,7 +165,7 @@ that you'll need to run `./unison`, not `unison`, as you haven't yet placed it
 on your path.
 
     
-        $ ./unison
+    $ ./unison
     Usage: unison [options]
         or unison root1 root2 [options]
         or unison profilename [options]
@@ -200,7 +197,7 @@ anywhere via `unison`.
 If you're saving the source somewhere, you can use a symlink.
 
     
-        $ ln -s /usr/local/src/unison-2.40.63/unison /usr/local/bin/unison
+    $ ln -s /usr/local/src/unison-2.40.63/unison /usr/local/bin/unison
     
 
 Or you can copy the binary directly. (Note: you'll have to do it this way if
@@ -208,7 +205,7 @@ you're planning to remove the source code, since the original binary is in the
 source code directory).
 
     
-        $ cp unison /usr/local/bin/unison
+    $ cp unison /usr/local/bin/unison
     
 
 ### Troubleshooting
@@ -218,7 +215,7 @@ source code directory).
 You see messages that look like this:
 
     
-        $ make UISTYLE=text
+    $ make UISTYLE=text
     ocamlc -o mkProjectInfo unix.cma str.cma mkProjectInfo.ml
     make: ocamlc: No such file or directory
     # [... more error output]
@@ -233,7 +230,7 @@ Install an OCaml compiler (see step 1)
 You see lots of warnings that look like this:
 
     
-        ld: warning: object file
+    ld: warning: object file
     (/usr/local/lib/ocaml/libunix.a(rewinddir.o)) was built for newer OSX version (10.11) than being linked (10.5)
     
 
@@ -247,7 +244,7 @@ step 2).
 Unison runs, but immediately segfaults.
 
     
-        $ ./unison
+    $ ./unison
     0??Segmentation fault: 11
     
 
@@ -264,7 +261,7 @@ it's not in
 look for it elsewhere(e.g. with mdfind).
 
     
-        $ mdfind -name .sdk
+    $ mdfind -name .sdk
     
 
 #### Problem
@@ -273,7 +270,7 @@ Unison works locally, but not with a remote server. The error output contains
 something like this:
 
     
-        Fatal error: Internal error: New archives are not identical.
+    Fatal error: Internal error: New archives are not identical.
     
 
 ##### Solution
@@ -288,5 +285,3 @@ failing-with-fatal-error-internal-error-new-archives-are-no).
 * * *
 
 ###### Category: [How-to](/category/how-to.html).
-
-
