@@ -1,6 +1,7 @@
 Title: A Python LRU Cache
 Date: Mon 05 May 2014
 Author: Katrina Ellison Geltman
+Slug: lru-cache
 
 Caches are structures for storing data for future use so that it doesn't have
 to be re-calculated each time it is accessed. You might be familiar with them
@@ -58,7 +59,7 @@ has two separate parts: the cache itself and the circular doubly linked list.
 The cache is an object, so you can do things like:
 
     
-        >>> cache = LRUCache()
+    >>> cache = LRUCache()
     >>> myfunc = lambda x,y: x*y
     >>> cache.save_and_return(myfunc, 2, 3)
     6
@@ -73,7 +74,7 @@ than objects. If you want to use a cache with a particular function, you can
 wrap that function with an LRU cache decorator:
 
     
-        from functools import lru_cache
+    from functools import lru_cache
     @lru_cache(maxsize=10)
     def myfunc(x, y):
         return x*y
@@ -88,7 +89,4 @@ next item, the item key, and the item result.
 And that's it: a simple cache implementation.
 
 * * *
-
-###### Category: [Python](/category/python.html). Tags:
-[Python](/tag/python.html),
 

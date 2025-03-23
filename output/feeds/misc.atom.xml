@@ -223,7 +223,7 @@ start by trying a compiler with a different major version (e.g. 3.x instead of
 failing-with-fatal-error-internal-error-new-archives-are-no"&gt;Stack
 Exchange&lt;/a&gt;.&lt;/p&gt;
 &lt;hr&gt;
-&lt;h6&gt;Category: &lt;a href="/category/how-to.html"&gt;How-to&lt;/a&gt;.&lt;/h6&gt;</content><category term="misc"></category></entry><entry><title>A Python LRU Cache</title><link href="/a-python-lru-cache.html" rel="alternate"></link><published>2014-05-05T00:00:00+00:00</published><updated>2014-05-05T00:00:00+00:00</updated><author><name>Katrina Ellison Geltman</name></author><id>tag:None,2014-05-05:/a-python-lru-cache.html</id><summary type="html">&lt;p&gt;Caches are structures for storing data for future use so that it doesn't have
+&lt;h6&gt;Category: &lt;a href="/category/how-to.html"&gt;How-to&lt;/a&gt;.&lt;/h6&gt;</content><category term="misc"></category></entry><entry><title>A Python LRU Cache</title><link href="/lru-cache.html" rel="alternate"></link><published>2014-05-05T00:00:00+00:00</published><updated>2014-05-05T00:00:00+00:00</updated><author><name>Katrina Ellison Geltman</name></author><id>tag:None,2014-05-05:/lru-cache.html</id><summary type="html">&lt;p&gt;Caches are structures for storing data for future use so that it doesn't have
 to be re-calculated each time it is accessed. You might be familiar with them
 in the context of the web (your browser can cache a page so that it doesn't
 need to be reloaded the next …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Caches are structures for storing data for future use so that it doesn't have
@@ -269,7 +269,7 @@ serve as the keys in the hash table, and the linked list nodes containing
 &lt;a href="https://github.com/KatrinaE/miniprojects/tree/master/lru-cache"&gt;Github&lt;/a&gt;. It
 has two separate parts: the cache itself and the circular doubly linked list.
 The cache is an object, so you can do things like:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;cache&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;LRUCache&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;cache&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;LRUCache&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;myfunc&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;lambda&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt;
 &lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;cache&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;save_and_return&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;myfunc&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="mi"&gt;6&lt;/span&gt;
@@ -282,7 +282,7 @@ The cache is an object, so you can do things like:&lt;/p&gt;
 &lt;p&gt;Python 3 has LRU caches built in, but they're implemented as decorators rather
 than objects. If you want to use a cache with a particular function, you can
 wrap that function with an LRU cache decorator:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nn"&gt;functools&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;lru_cache&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;from&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nn"&gt;functools&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;lru_cache&lt;/span&gt;
 &lt;span class="nd"&gt;@lru_cache&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;maxsize&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="k"&gt;def&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;myfunc&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;return&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt;
@@ -294,9 +294,7 @@ implementation, the hash map is a basic dictionary and the 'nodes' in the
 linked list are 4-element lists whose items represent the previous item, the
 next item, the item key, and the item result.&lt;/p&gt;
 &lt;p&gt;And that's it: a simple cache implementation.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h6&gt;Category: &lt;a href="/category/python.html"&gt;Python&lt;/a&gt;. Tags:&lt;/h6&gt;
-&lt;p&gt;&lt;a href="/tag/python.html"&gt;Python&lt;/a&gt;,&lt;/p&gt;</content><category term="misc"></category></entry><entry><title>B_FURIOUS</title><link href="/b-furious.html" rel="alternate"></link><published>2014-04-16T00:00:00+00:00</published><updated>2014-04-16T00:00:00+00:00</updated><author><name>Katrina Ellison Geltman</name></author><id>tag:None,2014-04-16:/b-furious.html</id><summary type="html">&lt;p&gt;This is the code and simple circuit diagram for a wifi-enabled remote control
+&lt;hr&gt;</content><category term="misc"></category></entry><entry><title>B_FURIOUS</title><link href="/b-furious.html" rel="alternate"></link><published>2014-04-16T00:00:00+00:00</published><updated>2014-04-16T00:00:00+00:00</updated><author><name>Katrina Ellison Geltman</name></author><id>tag:None,2014-04-16:/b-furious.html</id><summary type="html">&lt;p&gt;This is the code and simple circuit diagram for a wifi-enabled remote control
 car driven by an Arduino Uno + Arduino WiFi Shield. The base for our car is a
 toy RC car called the &lt;a href="http://www.toysrus.com/buy/rc-trucks-
 buggies-off-road/fast-lane-b-furious-radio-control-vehicle-49-mhz-colors-
