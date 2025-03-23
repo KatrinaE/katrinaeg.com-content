@@ -1,6 +1,7 @@
 Title: Python Counter Performance
 Date: Wed 16 April 2014
 Author: Katrina Ellison Geltman
+Slug: python-counter-performance
 
 Python's Counters are a subclass of dictionaries used for tallying how many
 times elements occur in an iterable data structure like a list. I'm writing an
@@ -26,7 +27,7 @@ Python advertises Counters as 'fast'. For small _n_ (here, _n_ = 10) creating
 one is about 4 times slower than creating a regular dictionary:
 
     
-        >>> import timeit
+    >>> import timeit
     >>> from collections import Counter
     
     >>> # Timing dictionary creation
@@ -42,7 +43,7 @@ For larger _n_ , the performance disparity isn't nearly as extreme. Here, _n_
 = 1,000,000 and Counter creation is about 35% slower than dictionary creation:
 
     
-        # Timing dictionary creation
+    # Timing dictionary creation
     >>> timeit.timeit("x = { num : 'foo' for num in range(0, 1000000)}", number=1000)
     123.48868298530579
     
@@ -72,7 +73,7 @@ ncalls | tottime | percall | cumtime | percall | filename:lineno(function)
 calls most of the functions below it. What does it look like?
 
     
-        def update(self, iterable=None, **kwds):
+    def update(self, iterable=None, **kwds):
         if iterable is not None:
             if isinstance(iterable, Mapping):
                 if self:
@@ -103,7 +104,7 @@ Finally, `update` updates values passed by keyword argument, like those shown
 below:
 
     
-        >>> x = Counter(key1 = 'foo', key2 = 'var')
+    >>> x = Counter(key1 = 'foo', key2 = 'var')
     >>> print x
     Counter({'key2': 'var', 'key1': 'foo'})
     
@@ -136,7 +137,7 @@ because the new Counter is not very big, and I'm not making any copies - I
 thought that adding Counters would be quick. Let's look at `Counter__add__()`:
 
     
-        def __add__(self, other):
+    def __add__(self, other):
         if not isinstance(other, Counter):
             return NotImplemented
         result = Counter()
@@ -159,5 +160,3 @@ Gah. Looks like I'll have to come up with another idea to improve my program's
 running time.
 
 * * *
-
-###### Category: [misc](/category/misc.html).
