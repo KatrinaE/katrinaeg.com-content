@@ -1,6 +1,7 @@
 Title: B_FURIOUS
 Date: Wed 16 April 2014
 Author: Katrina Ellison Geltman
+Slug: b-furious
 
 This is the code and simple circuit diagram for a wifi-enabled remote control
 car driven by an Arduino Uno + Arduino WiFi Shield. The base for our car is a
@@ -12,7 +13,7 @@ or backwards, but cannot turn left or right.
 **The motor driver circuit and code work effectively, but we could not make
 the wifi shield work consistently enough to drive the car.**
 
-## Motor Control Circuit
+### Motor Control Circuit
 
 We adapted our circuit from the Arduino starter kit's 'Zoetrope' project
 (project #10), which controls a DC motor's direction and speed via buttons and
@@ -31,7 +32,7 @@ HTTP request.
 
 Note: we used an L293DNE H-bridge, not the LD293D depicted in the schematic.
 
-## Arduino Sketch
+### Arduino Sketch
 
 The most up-to-date version of the code is in
 CurrentReceiver/CurrentReceiver.ino.
@@ -46,12 +47,10 @@ Function | Action Performed
 `parseClientInput()` | Splits the incoming HTTP GET request into on/off, direction, and speed parameters.  
 `motorControl()` | Sets the motor's speed and direction  
   
-### Controlling the Car
+#### Controlling the Car
 
 The car can be controlled via CURL:
 
-    
-    
     curl <Arduino's-ip-address> -G <params>
     
 
@@ -62,22 +61,16 @@ the motor's speed.
 
 For example,
 
-    
-    
     curl <ip-address> -G 11255
     
 
 sends the car forward at top speed.
 
-    
-    
     curl <ip-address> -G 10020
     
 
 moves the car backward very slowly.
 
-    
-    
     curl <ip-address> -G 01255
     curl <ip-address> -G 00000
     curl <ip-address> -G 00125
@@ -85,7 +78,7 @@ moves the car backward very slowly.
 
 All of the above (and anything else beginning with a zero) turn the motor off.
 
-### Project Status and Further Ideas
+#### Project Status and Further Ideas
 
 While our own code and circuit are in working order, we were never able to
 drive our car because of problems with the Arduino's wifi shield. Our problem
@@ -99,5 +92,3 @@ problems. After a couple of weeks of finicking with the hardware, we decided
 to drop the project.
 
 * * *
-
-###### Category: [misc](/category/misc.html).
