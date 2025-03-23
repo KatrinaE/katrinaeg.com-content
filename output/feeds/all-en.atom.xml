@@ -1144,7 +1144,7 @@ magnifying glass at the upper right corner of the sketch). It should say:&lt;/p&
 1.1.0
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;hr&gt;</content><category term="misc"></category></entry><entry><title>My Seating Chart Software Saga</title><link href="/my-seating-chart-software-saga.html" rel="alternate"></link><published>2014-03-02T00:00:00+00:00</published><updated>2014-03-02T00:00:00+00:00</updated><author><name>Katrina Ellison Geltman</name></author><id>tag:None,2014-03-02:/my-seating-chart-software-saga.html</id><summary type="html">&lt;p&gt;For the first few weeks of Hacker School, I've been working on a project that
+&lt;hr&gt;</content><category term="misc"></category></entry><entry><title>My Seating Chart Software Saga</title><link href="/seating-chart-saga.html" rel="alternate"></link><published>2014-03-02T00:00:00+00:00</published><updated>2014-03-02T00:00:00+00:00</updated><author><name>Katrina Ellison Geltman</name></author><id>tag:None,2014-03-02:/seating-chart-saga.html</id><summary type="html">&lt;p&gt;For the first few weeks of Hacker School, I've been working on a project that
 began last summer, when I volunteered to help out one of my husband's co-
 workers. She's responsible for putting together the seating chart for a five-
 day-long conference every year. She spends a week obsessing …&lt;/p&gt;</summary><content type="html">&lt;p&gt;For the first few weeks of Hacker School, I've been working on a project that
@@ -1201,10 +1201,6 @@ it would be rude for me to have worked on her fun problem all year without
 giving her anything in return.&lt;/p&gt;
 &lt;p&gt;So my plan is to get all of those things done within the next few months - in
 time for this year's conference.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h6&gt;Category: [Seating Chart Creator](/category/seating-chart-&lt;/h6&gt;
-&lt;p&gt;creator.html). Tags: &lt;a href="/tag/seating-chart.html"&gt;Seating Chart&lt;/a&gt;,
-&lt;a href="/tag/narratives.html"&gt;narratives&lt;/a&gt;,&lt;/p&gt;
 &lt;hr&gt;</content><category term="misc"></category></entry><entry><title>The Simulated Annealing Algorithm</title><link href="/the-simulated-annealing-algorithm.html" rel="alternate"></link><published>2014-02-20T00:00:00+00:00</published><updated>2014-02-20T00:00:00+00:00</updated><author><name>Katrina Ellison Geltman</name></author><id>tag:None,2014-02-20:/the-simulated-annealing-algorithm.html</id><summary type="html">&lt;p&gt;Simulated annealing is a method for finding a good (not necessarily perfect)
 solution to an optimization problem. If you're in a situation where you want
 to maximize or minimize something, your problem can likely be tackled with
