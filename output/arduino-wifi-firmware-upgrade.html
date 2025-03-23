@@ -120,17 +120,17 @@ my Mac, the IDE is at <code>/Applications/Arduino.app</code> and the WiFi firmwa
 <code>/Applications/Arduino.app/Contents/Resources/Java/hardware/arduino/firmwares/wifishield</code>.</p>
 <p>You can double-check that you have the right version by going to lines 41-42
 of <code>wifishield/wifiHD/src/main.c</code>. They should say this:</p>
-<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="o">/*</span><span class="w"> </span><span class="n">FIRMWARE</span><span class="w"> </span><span class="n">version</span><span class="w"> </span><span class="o">*/</span>
+<div class="highlight"><pre><span></span><code><span class="o">/*</span><span class="w"> </span><span class="n">FIRMWARE</span><span class="w"> </span><span class="n">version</span><span class="w"> </span><span class="o">*/</span>
 <span class="k">const</span><span class="w"> </span><span class="nb">char</span><span class="o">*</span><span class="w"> </span><span class="n">fwVersion</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;1.1.0&quot;</span><span class="p">;</span>
 </code></pre></div>
 
 <h4>From Github</h4>
 <p>The code is also on Github if you need it. There are two versions on Arduino’s
 Github account:</p>
-<div class="highlight"><pre><span></span><code><span class="k">*</span> https://github.com/arduino/wifishield (firmware last updated 2013-01-19)
-<span class="k">*</span> &lt;https://github.com/arduino/Arduino/tree/master/hardware/arduino/firmwares/wifishield&gt; (firmware last upgraded 2013-03-28)
-</code></pre></div>
-
+<ul>
+<li>https://github.com/arduino/wifishield (firmware last updated 2013-01-19)</li>
+<li><a href="https://github.com/arduino/Arduino/tree/master/hardware/arduino/firmwares/wifishield">https://github.com/arduino/Arduino/tree/master/hardware/arduino/firmwares/wifishield</a> (firmware last upgraded 2013-03-28)</li>
+</ul>
 <p><strong>The second repository is the one you want.</strong> The first one contains the old
 firmware.</p>
 <p>Cloning the second repo is a pain because you have to download the full
@@ -166,22 +166,22 @@ with one of the install scripts in <code>wifishield/firmware/scripts/</code>
 (<code>ArduinoWifiShield_upgrade.sh</code> for Linux, <code>ArduinoWifiShield_upgrade.sh</code> for
 Mac). Before you run them, you'll have to fix a small error in the path where
 it looks for the firmware. Change:</p>
-<div class="highlight"><pre><span></span><code>    WIFI_FW_PATH=&quot;/hardware/arduino/firmwares/wifi-shield&quot;
+<div class="highlight"><pre><span></span><code>WIFI_FW_PATH=&quot;/hardware/arduino/firmwares/wifi-shield&quot;
 </code></pre></div>
 
 <p>to:</p>
-<div class="highlight"><pre><span></span><code>    WIFI_FW_PATH=&quot;/hardware/arduino/firmwares/wifishield&quot;
+<div class="highlight"><pre><span></span><code>WIFI_FW_PATH=&quot;/hardware/arduino/firmwares/wifishield&quot;
 </code></pre></div>
 
 <h3>5th: Upload the Firmware</h3>
 <p>It's go time! Link your WiFi shield to your computer using a mini USB cable
 (<em>don't</em> leave the shield connected to the Arduino). Then run:</p>
-<div class="highlight"><pre><span></span><code>    cd wifishield/firmware/scripts
+<div class="highlight"><pre><span></span><code>cd wifishield/firmware/scripts
 sudo sh ArduinoWifiShield_upgrade_mac.sh -a /Applications/Arduino.app/Contents/Resources/Java -f shield
 </code></pre></div>
 
 <p>You should see output like this:</p>
-<div class="highlight"><pre><span></span><code>           Arduino WiFi Shield upgrade
+<div class="highlight"><pre><span></span><code>       Arduino WiFi Shield upgrade
 =========================================
 Disclaimer: to access to the USB devices correctly, the dfu-programmer 
 needs to be used as root. Run this script as root.
@@ -198,7 +198,7 @@ Thank you!
 <h3>6th: Check that the install was successful</h3>
 <p>To verify that your WiFi shield is using the new firmware, mount the WiFi
 shield on your Arduino and upload this sketch:</p>
-<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;WiFi.h&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;WiFi.h&gt;</span>
 
 <span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
@@ -212,13 +212,11 @@ shield on your Arduino and upload this sketch:</p>
 
 <p>Check the serial output (in the IDE, you can do this by clicking on the
 magnifying glass at the upper right corner of the sketch). It should say:</p>
-<div class="highlight"><pre><span></span><code>    the version is:
+<div class="highlight"><pre><span></span><code>the version is:
 1.1.0
 </code></pre></div>
 
 <hr>
-<h6>Category: <a href="/category/how-to.html">How-to</a>. Tags:</h6>
-<p><a href="/tag/arduino.html">Arduino</a>,</p>
 </article>
 
 						</div>

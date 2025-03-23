@@ -1027,7 +1027,7 @@ high.&lt;/p&gt;
 &lt;p&gt;No matter how long I wait, that friggin slave just isn't ready. If this is the
 problem, I'm going to have to throw in the towel. There's no more code to
 debug - I'd have to get out datasheets and begin from there.&lt;/p&gt;
-&lt;hr&gt;</content><category term="misc"></category></entry><entry><title>How to Update the Arduino WiFi Shield Firmware</title><link href="/how-to-update-the-arduino-wifi-shield-firmware.html" rel="alternate"></link><published>2014-03-21T00:00:00+00:00</published><updated>2014-03-21T00:00:00+00:00</updated><author><name>Katrina Ellison Geltman</name></author><id>tag:None,2014-03-21:/how-to-update-the-arduino-wifi-shield-firmware.html</id><summary type="html">&lt;p&gt;The firmware that ships with the Arduino WiFi shield (v. 1.0.0) doesn't work
+&lt;hr&gt;</content><category term="misc"></category></entry><entry><title>How to Update the Arduino WiFi Shield Firmware</title><link href="/arduino-wifi-firmware-upgrade.html" rel="alternate"></link><published>2014-03-21T00:00:00+00:00</published><updated>2014-03-21T00:00:00+00:00</updated><author><name>Katrina Ellison Geltman</name></author><id>tag:None,2014-03-21:/arduino-wifi-firmware-upgrade.html</id><summary type="html">&lt;p&gt;The firmware that ships with the Arduino WiFi shield (v. 1.0.0) doesn't work
 properly. Fortunately, they've written new firmware (v. 1.1.0). Unfortunately,
 updating it is a bit tricky. I found both the &lt;a href="http://arduino.cc/en/Hacking/WiFiShieldFirmwareUpgrading"&gt;official Arduino
 instructions&lt;/a&gt; and
@@ -1052,17 +1052,17 @@ my Mac, the IDE is at &lt;code&gt;/Applications/Arduino.app&lt;/code&gt; and the
 &lt;code&gt;/Applications/Arduino.app/Contents/Resources/Java/hardware/arduino/firmwares/wifishield&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;You can double-check that you have the right version by going to lines 41-42
 of &lt;code&gt;wifishield/wifiHD/src/main.c&lt;/code&gt;. They should say this:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="o"&gt;/*&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;FIRMWARE&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;version&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;*/&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;/*&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;FIRMWARE&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;version&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;*/&lt;/span&gt;
 &lt;span class="k"&gt;const&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;char&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;fwVersion&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;1.1.0&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h4&gt;From Github&lt;/h4&gt;
 &lt;p&gt;The code is also on Github if you need it. There are two versions on Arduino’s
 Github account:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;*&lt;/span&gt; https://github.com/arduino/wifishield (firmware last updated 2013-01-19)
-&lt;span class="k"&gt;*&lt;/span&gt; &amp;lt;https://github.com/arduino/Arduino/tree/master/hardware/arduino/firmwares/wifishield&amp;gt; (firmware last upgraded 2013-03-28)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
+&lt;ul&gt;
+&lt;li&gt;https://github.com/arduino/wifishield (firmware last updated 2013-01-19)&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/arduino/Arduino/tree/master/hardware/arduino/firmwares/wifishield"&gt;https://github.com/arduino/Arduino/tree/master/hardware/arduino/firmwares/wifishield&lt;/a&gt; (firmware last upgraded 2013-03-28)&lt;/li&gt;
+&lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;The second repository is the one you want.&lt;/strong&gt; The first one contains the old
 firmware.&lt;/p&gt;
 &lt;p&gt;Cloning the second repo is a pain because you have to download the full
@@ -1098,22 +1098,22 @@ with one of the install scripts in &lt;code&gt;wifishield/firmware/scripts/&lt;/
 (&lt;code&gt;ArduinoWifiShield_upgrade.sh&lt;/code&gt; for Linux, &lt;code&gt;ArduinoWifiShield_upgrade.sh&lt;/code&gt; for
 Mac). Before you run them, you'll have to fix a small error in the path where
 it looks for the firmware. Change:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;    WIFI_FW_PATH=&amp;quot;/hardware/arduino/firmwares/wifi-shield&amp;quot;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;WIFI_FW_PATH=&amp;quot;/hardware/arduino/firmwares/wifi-shield&amp;quot;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;to:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;    WIFI_FW_PATH=&amp;quot;/hardware/arduino/firmwares/wifishield&amp;quot;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;WIFI_FW_PATH=&amp;quot;/hardware/arduino/firmwares/wifishield&amp;quot;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h3&gt;5th: Upload the Firmware&lt;/h3&gt;
 &lt;p&gt;It's go time! Link your WiFi shield to your computer using a mini USB cable
 (&lt;em&gt;don't&lt;/em&gt; leave the shield connected to the Arduino). Then run:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;    cd wifishield/firmware/scripts
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;cd wifishield/firmware/scripts
 sudo sh ArduinoWifiShield_upgrade_mac.sh -a /Applications/Arduino.app/Contents/Resources/Java -f shield
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;You should see output like this:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;           Arduino WiFi Shield upgrade
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;       Arduino WiFi Shield upgrade
 =========================================
 Disclaimer: to access to the USB devices correctly, the dfu-programmer 
 needs to be used as root. Run this script as root.
@@ -1130,7 +1130,7 @@ Thank you!
 &lt;h3&gt;6th: Check that the install was successful&lt;/h3&gt;
 &lt;p&gt;To verify that your WiFi shield is using the new firmware, mount the WiFi
 shield on your Arduino and upload this sketch:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="cp"&gt;#include&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="cpf"&gt;&amp;lt;WiFi.h&amp;gt;&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="cp"&gt;#include&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="cpf"&gt;&amp;lt;WiFi.h&amp;gt;&lt;/span&gt;
 
 &lt;span class="kt"&gt;void&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;setup&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
 &lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;Serial&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;begin&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;9600&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
@@ -1144,13 +1144,11 @@ shield on your Arduino and upload this sketch:&lt;/p&gt;
 
 &lt;p&gt;Check the serial output (in the IDE, you can do this by clicking on the
 magnifying glass at the upper right corner of the sketch). It should say:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;    the version is:
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;the version is:
 1.1.0
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;hr&gt;
-&lt;h6&gt;Category: &lt;a href="/category/how-to.html"&gt;How-to&lt;/a&gt;. Tags:&lt;/h6&gt;
-&lt;p&gt;&lt;a href="/tag/arduino.html"&gt;Arduino&lt;/a&gt;,&lt;/p&gt;</content><category term="misc"></category></entry><entry><title>My Seating Chart Software Saga</title><link href="/my-seating-chart-software-saga.html" rel="alternate"></link><published>2014-03-02T00:00:00+00:00</published><updated>2014-03-02T00:00:00+00:00</updated><author><name>Katrina Ellison Geltman</name></author><id>tag:None,2014-03-02:/my-seating-chart-software-saga.html</id><summary type="html">&lt;p&gt;For the first few weeks of Hacker School, I've been working on a project that
+&lt;hr&gt;</content><category term="misc"></category></entry><entry><title>My Seating Chart Software Saga</title><link href="/my-seating-chart-software-saga.html" rel="alternate"></link><published>2014-03-02T00:00:00+00:00</published><updated>2014-03-02T00:00:00+00:00</updated><author><name>Katrina Ellison Geltman</name></author><id>tag:None,2014-03-02:/my-seating-chart-software-saga.html</id><summary type="html">&lt;p&gt;For the first few weeks of Hacker School, I've been working on a project that
 began last summer, when I volunteered to help out one of my husband's co-
 workers. She's responsible for putting together the seating chart for a five-
 day-long conference every year. She spends a week obsessing …&lt;/p&gt;</summary><content type="html">&lt;p&gt;For the first few weeks of Hacker School, I've been working on a project that

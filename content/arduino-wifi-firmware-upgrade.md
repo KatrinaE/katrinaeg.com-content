@@ -1,6 +1,7 @@
 Title: How to Update the Arduino WiFi Shield Firmware
 Date: Fri 21 March 2014
 Author: Katrina Ellison Geltman
+Slug: arduino-wifi-firmware-upgrade
 
 The firmware that ships with the Arduino WiFi shield (v. 1.0.0) doesn't work
 properly. Fortunately, they've written new firmware (v. 1.1.0). Unfortunately,
@@ -28,7 +29,7 @@ You can double-check that you have the right version by going to lines 41-42
 of `wifishield/wifiHD/src/main.c`. They should say this:
 
     
-        /* FIRMWARE version */
+    /* FIRMWARE version */
     const char* fwVersion = "1.1.0";
     
 
@@ -37,8 +38,8 @@ of `wifishield/wifiHD/src/main.c`. They should say this:
 The code is also on Github if you need it. There are two versions on Arduino’s
 Github account:
 
-    * https://github.com/arduino/wifishield (firmware last updated 2013-01-19)
-    * <https://github.com/arduino/Arduino/tree/master/hardware/arduino/firmwares/wifishield> (firmware last upgraded 2013-03-28)
+* https://github.com/arduino/wifishield (firmware last updated 2013-01-19)
+* <https://github.com/arduino/Arduino/tree/master/hardware/arduino/firmwares/wifishield> (firmware last upgraded 2013-03-28)
 
 **The second repository is the one you want.** The first one contains the old
 firmware.
@@ -88,13 +89,13 @@ Mac). Before you run them, you'll have to fix a small error in the path where
 it looks for the firmware. Change:
 
     
-        WIFI_FW_PATH="/hardware/arduino/firmwares/wifi-shield"
+    WIFI_FW_PATH="/hardware/arduino/firmwares/wifi-shield"
     
 
 to:
 
     
-        WIFI_FW_PATH="/hardware/arduino/firmwares/wifishield"
+    WIFI_FW_PATH="/hardware/arduino/firmwares/wifishield"
     
 
 ### 5th: Upload the Firmware
@@ -103,14 +104,14 @@ It's go time! Link your WiFi shield to your computer using a mini USB cable
 (_don't_ leave the shield connected to the Arduino). Then run:
 
     
-        cd wifishield/firmware/scripts
+    cd wifishield/firmware/scripts
     sudo sh ArduinoWifiShield_upgrade_mac.sh -a /Applications/Arduino.app/Contents/Resources/Java -f shield
     
 
 You should see output like this:
 
     
-               Arduino WiFi Shield upgrade
+           Arduino WiFi Shield upgrade
     =========================================
     Disclaimer: to access to the USB devices correctly, the dfu-programmer 
     needs to be used as root. Run this script as root.
@@ -130,7 +131,7 @@ To verify that your WiFi shield is using the new firmware, mount the WiFi
 shield on your Arduino and upload this sketch:
 
     
-        #include <WiFi.h>
+    #include <WiFi.h>
     
     void setup() {
       Serial.begin(9600);
@@ -146,12 +147,8 @@ Check the serial output (in the IDE, you can do this by clicking on the
 magnifying glass at the upper right corner of the sketch). It should say:
 
     
-        the version is:
+    the version is:
     1.1.0
     
 
 * * *
-
-###### Category: [How-to](/category/how-to.html). Tags:
-[Arduino](/tag/arduino.html),
-
