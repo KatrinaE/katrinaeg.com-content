@@ -3,8 +3,8 @@ Date: 2014-05-30
 Category: Hacker School
 Tags: reflections, goals, learning
 Author: Katrina Ellison Geltman
+Slug: hs-reflections
 
-## Hacker School Reflections
 When I arrived at Hacker School, I laid out the following goals for myself:
 
 While I'm here, I want to:
@@ -29,7 +29,7 @@ wanted to become a Python ninja). </p>
 So... how'd I do?
 
 
-#### Learning a statically typed language
+## Learning a statically typed language
 
 I set this goal for myself because I felt like, having worked mostly in Python,
 I wouldn't be a real programmer until I could use something besides a scripting
@@ -44,19 +44,19 @@ have liked because I got distracted by solving problems that arose in my
 existing projects.
 
 
-#### Using git correctly
+## Using git correctly
 
 I've had some scares (most recently, I accidentally created a duplicate copy of
 every single commit in a repository), but overall I'm much more confident in my
 git abilities than I was when I arrived at Hacker School.
 
-#### Finishing a 'real' project
+## Finishing a 'real' project
 
 I did that! I finished my Seating Chart Creator application and handed it off to
 my 'client' (the work was pro-bono and open source) earlier this month.
 
 
-#### Learning algorithms
+## Learning algorithms
 
 I set this goal because algorithms problems always seemed to involve solving fun
 puzzles, and I like doing that. I felt like I had missed out on something by
@@ -71,7 +71,7 @@ lifetime of studying things that have no immediate application, I was ready to
 focus on more applied skills.
 
 
-#### Exploring the Linux kernel and distributed computing
+## Exploring the Linux kernel and distributed computing
 
 No and no. Maybe another session at Hacker School is in my future?
 
@@ -92,7 +92,7 @@ print([b for a in x for b in a if b])
 # prints [1, 1]
 ```
 
-#### What else did I do?
+## What else did I do?
 So if I didn't convincingly achieve all of my goals, what did I do?
 
 * Built an Arduino RC car
@@ -107,6 +107,7 @@ Schoolers, facilitators, and alums
 * Went on many walks along the West Side greenway
 * Made tons of great friends
 * Became confident I could move to New York if I wanted to
+
 Most of these 'accomplishments' are intangible, but I'm okay with that. When
 you're working, most things have some sort of deliverable that needs to be
 delivered at some specific time. Hacker School gave me the luxury of focusing on
