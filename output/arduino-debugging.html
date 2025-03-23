@@ -101,7 +101,7 @@
 <article>
     <h2>Debugging the Arduino WiFi Shield</h2>
   	<h6>Written by <a href="/author/katrina-ellison-geltman.html">Katrina Ellison Geltman</a> on Tue 01 April 2014.</h6>
-	<h2>The Problem</h2>
+	<h3>The Problem</h3>
 <p>After disconnecting from the internet, the Arduno WiFi shield (sitting atop an
 Uno) is able to reconnect, but cannot re-start a server.</p>
 <p>For example, here's the output of running the built-in <code>SimpleWebServerWiFi</code>
@@ -143,7 +143,7 @@ Hello,<span class="w"> </span>client!
 ^C^<span class="o">]</span><span class="w"> </span>Iso<span class="w"> </span>conf<span class="w"> </span>am<span class="w"> </span>uso<span class="w"> </span>confsued^Msed??<span class="w"> </span>//<span class="w"> </span>should<span class="w"> </span>be<span class="w"> </span><span class="s1">&#39;I am so confused??&#39;</span>
 </code></pre></div>
 
-<h2>Getting started</h2>
+<h3>Getting started</h3>
 <p>To test what happens when the Arduino disconnects from the WiFi network, I
 wrote some code to automatically disconnect every tenth time through Arduino's
 event loop, <code>loop()</code>.</p>
@@ -164,14 +164,14 @@ sockets) it can’t restart anymore. I also think it could be creating the
 strange client connection problems - because socket 0 is never closed, the
 client always tries to connect to it, but the server is actually on socket
 1... or 2... or 3...</p>
-<h3>Idea #1: Call <code>client.stop()</code></h3>
+<h4>Idea #1: Call <code>client.stop()</code></h4>
 <p>Another Hacker Schooler with more networking experience than I have thought
 that calling <code>client.stop()</code> might stop the server manually. His hypothesis
 was that Arduino’s 'client' is actually what most networking libraries call a
 'socket', and that stopping the client might close the socket.</p>
 <p>I wrote a simple sketch to test it, but it didn't work: <code>client.stop()</code> stops
 the client, but not the server. At least that's expected behavior!</p>
-<h3>Idea #2: Mimic solution to Arduino issue #1720</h3>
+<h4>Idea #2: Mimic solution to Arduino issue #1720</h4>
 <p>I found a relevant-seeming issue on Github: <a href="https://github.com/Arduino/Arduino/issues/1720">WiFi shield client does not
 release socket on connect
 fail</a>. The poster fixed the
@@ -198,7 +198,7 @@ that the socket is closed when the WiFi disconnects.</p>
 then points to a method in utility/WiFi_drv.cpp. Great. <code>disconnect()</code> issues
 actual assembly commands. I really didn't want to debug Assembly (well, at
 least not that day). I moved on for the moment.</p>
-<h2>Some success! The server re-starts</h2>
+<h3>Some success! The server re-starts</h3>
 <p>With the help of #1720 above, I figured out that the state of the WiFi
 object's sockets is stored in an array called <code>_state</code>, and the port running
 on each socket is stored in an array called <code>_server_port</code>.</p>
@@ -232,7 +232,7 @@ restarting the WiFi. Adding the line <code>delay(10000);</code> before running
 }
 </code></pre></div>
 
-<h2>Big problem: the client doesn't restart</h2>
+<h3>Big problem: the client doesn't restart</h3>
 <p>This is where I got stuck: restarting the server after a client has connected
 to it. Even though <code>client.stop()</code> is always called before the WiFi is
 disconnected, things don't go smoothly.</p>
@@ -257,7 +257,7 @@ bug, they started chanting, "Memory leak! Memory leak!". Fortunately, Arduino
 has a function, <code>freeMemory()</code>, for reporting its available memory. I added
 print statements everywhere to keep track of this, but found it never changed
 significantly.</p>
-<h3>The big problem: no handshake!</h3>
+<h4>The big problem: no handshake!</h4>
 <p>I added print statements to that <code>serverDrv.getClientState()</code> so I could see
 precisely where it got stuck. It's during the line
 <code>SpiDrv::waitForSlaveReady()</code>. All this does is instruct the Arduino to wait

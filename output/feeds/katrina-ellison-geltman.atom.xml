@@ -849,13 +849,13 @@ to instantiate those Counters initially.&lt;/p&gt;
 &lt;p&gt;Gah. Looks like I'll have to come up with another idea to improve my program's
 running time.&lt;/p&gt;
 &lt;hr&gt;
-&lt;h6&gt;Category: &lt;a href="/category/misc.html"&gt;misc&lt;/a&gt;.&lt;/h6&gt;</content><category term="misc"></category></entry><entry><title>Debugging the Arduino WiFi Shield</title><link href="/arduino-debugging.html" rel="alternate"></link><published>2014-04-01T00:00:00+00:00</published><updated>2014-04-01T00:00:00+00:00</updated><author><name>Katrina Ellison Geltman</name></author><id>tag:None,2014-04-01:/arduino-debugging.html</id><summary type="html">&lt;h2&gt;The Problem&lt;/h2&gt;
+&lt;h6&gt;Category: &lt;a href="/category/misc.html"&gt;misc&lt;/a&gt;.&lt;/h6&gt;</content><category term="misc"></category></entry><entry><title>Debugging the Arduino WiFi Shield</title><link href="/arduino-debugging.html" rel="alternate"></link><published>2014-04-01T00:00:00+00:00</published><updated>2014-04-01T00:00:00+00:00</updated><author><name>Katrina Ellison Geltman</name></author><id>tag:None,2014-04-01:/arduino-debugging.html</id><summary type="html">&lt;h3&gt;The Problem&lt;/h3&gt;
 &lt;p&gt;After disconnecting from the internet, the Arduno WiFi shield (sitting atop an
 Uno) is able to reconnect, but cannot re-start a server.&lt;/p&gt;
 &lt;p&gt;For example, here's the output of running the built-in &lt;code&gt;SimpleWebServerWiFi&lt;/code&gt;
 sketch (you can find it in the Arduino IDE under File &amp;gt; Examples &amp;gt; WiFi &amp;gt;
 SimpleWebServerWiFi).&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;Attempting&lt;/span&gt; &lt;span class="s s-Atom"&gt;to …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;h2&gt;The Problem&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;Attempting&lt;/span&gt; &lt;span class="s s-Atom"&gt;to …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;h3&gt;The Problem&lt;/h3&gt;
 &lt;p&gt;After disconnecting from the internet, the Arduno WiFi shield (sitting atop an
 Uno) is able to reconnect, but cannot re-start a server.&lt;/p&gt;
 &lt;p&gt;For example, here's the output of running the built-in &lt;code&gt;SimpleWebServerWiFi&lt;/code&gt;
@@ -897,7 +897,7 @@ Hello,&lt;span class="w"&gt; &lt;/span&gt;client!
 ^C^&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;Iso&lt;span class="w"&gt; &lt;/span&gt;conf&lt;span class="w"&gt; &lt;/span&gt;am&lt;span class="w"&gt; &lt;/span&gt;uso&lt;span class="w"&gt; &lt;/span&gt;confsued^Msed??&lt;span class="w"&gt; &lt;/span&gt;//&lt;span class="w"&gt; &lt;/span&gt;should&lt;span class="w"&gt; &lt;/span&gt;be&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;I am so confused??&amp;#39;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;h2&gt;Getting started&lt;/h2&gt;
+&lt;h3&gt;Getting started&lt;/h3&gt;
 &lt;p&gt;To test what happens when the Arduino disconnects from the WiFi network, I
 wrote some code to automatically disconnect every tenth time through Arduino's
 event loop, &lt;code&gt;loop()&lt;/code&gt;.&lt;/p&gt;
@@ -918,14 +918,14 @@ sockets) it can’t restart anymore. I also think it could be creating the
 strange client connection problems - because socket 0 is never closed, the
 client always tries to connect to it, but the server is actually on socket
 1... or 2... or 3...&lt;/p&gt;
-&lt;h3&gt;Idea #1: Call &lt;code&gt;client.stop()&lt;/code&gt;&lt;/h3&gt;
+&lt;h4&gt;Idea #1: Call &lt;code&gt;client.stop()&lt;/code&gt;&lt;/h4&gt;
 &lt;p&gt;Another Hacker Schooler with more networking experience than I have thought
 that calling &lt;code&gt;client.stop()&lt;/code&gt; might stop the server manually. His hypothesis
 was that Arduino’s 'client' is actually what most networking libraries call a
 'socket', and that stopping the client might close the socket.&lt;/p&gt;
 &lt;p&gt;I wrote a simple sketch to test it, but it didn't work: &lt;code&gt;client.stop()&lt;/code&gt; stops
 the client, but not the server. At least that's expected behavior!&lt;/p&gt;
-&lt;h3&gt;Idea #2: Mimic solution to Arduino issue #1720&lt;/h3&gt;
+&lt;h4&gt;Idea #2: Mimic solution to Arduino issue #1720&lt;/h4&gt;
 &lt;p&gt;I found a relevant-seeming issue on Github: &lt;a href="https://github.com/Arduino/Arduino/issues/1720"&gt;WiFi shield client does not
 release socket on connect
 fail&lt;/a&gt;. The poster fixed the
@@ -952,7 +952,7 @@ that the socket is closed when the WiFi disconnects.&lt;/p&gt;
 then points to a method in utility/WiFi_drv.cpp. Great. &lt;code&gt;disconnect()&lt;/code&gt; issues
 actual assembly commands. I really didn't want to debug Assembly (well, at
 least not that day). I moved on for the moment.&lt;/p&gt;
-&lt;h2&gt;Some success! The server re-starts&lt;/h2&gt;
+&lt;h3&gt;Some success! The server re-starts&lt;/h3&gt;
 &lt;p&gt;With the help of #1720 above, I figured out that the state of the WiFi
 object's sockets is stored in an array called &lt;code&gt;_state&lt;/code&gt;, and the port running
 on each socket is stored in an array called &lt;code&gt;_server_port&lt;/code&gt;.&lt;/p&gt;
@@ -986,7 +986,7 @@ restarting the WiFi. Adding the line &lt;code&gt;delay(10000);&lt;/code&gt; befo
 }
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;h2&gt;Big problem: the client doesn't restart&lt;/h2&gt;
+&lt;h3&gt;Big problem: the client doesn't restart&lt;/h3&gt;
 &lt;p&gt;This is where I got stuck: restarting the server after a client has connected
 to it. Even though &lt;code&gt;client.stop()&lt;/code&gt; is always called before the WiFi is
 disconnected, things don't go smoothly.&lt;/p&gt;
@@ -1011,7 +1011,7 @@ bug, they started chanting, "Memory leak! Memory leak!". Fortunately, Arduino
 has a function, &lt;code&gt;freeMemory()&lt;/code&gt;, for reporting its available memory. I added
 print statements everywhere to keep track of this, but found it never changed
 significantly.&lt;/p&gt;
-&lt;h3&gt;The big problem: no handshake!&lt;/h3&gt;
+&lt;h4&gt;The big problem: no handshake!&lt;/h4&gt;
 &lt;p&gt;I added print statements to that &lt;code&gt;serverDrv.getClientState()&lt;/code&gt; so I could see
 precisely where it got stuck. It's during the line
 &lt;code&gt;SpiDrv::waitForSlaveReady()&lt;/code&gt;. All this does is instruct the Arduino to wait

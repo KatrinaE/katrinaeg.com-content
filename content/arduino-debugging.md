@@ -1,6 +1,7 @@
 Title: Debugging the Arduino WiFi Shield
 Date: Tue 01 April 2014
 Author: Katrina Ellison Geltman
+Slug: arduino-debugging
 
 ### The Problem
 
@@ -12,7 +13,7 @@ sketch (you can find it in the Arduino IDE under File > Examples > WiFi >
 SimpleWebServerWiFi).
 
     
-        Attempting to connect to Network named: <my network>
+    Attempting to connect to Network named: <my network>
     SSID: <my network>
     IP Address: <my IP>
     signal strength (RSSI):-46 dBm
@@ -23,7 +24,7 @@ Great - I think I'm connected! I can successfully ping the Arduino's IP
 address:
 
     
-        $ ping <my IP>
+    $ ping <my IP>
     PING <my IP> (<my IP>): 56 data bytes
     64 bytes from <my IP>: icmp_seq=0 ttl=255 time=4.371 ms
     64 bytes from <my IP>: icmp_seq=1 ttl=255 time=6.826 ms
@@ -39,14 +40,14 @@ address:
 But I can’t complete HTTP requests:
 
     
-        $ curl -G http://<my IP>
+    $ curl -G http://<my IP>
     curl: (7) Failed connect to <my IP>:80; Connection refused
     
 
 And using telnet is just weird:
 
     
-        $ telnet <my IP>
+    $ telnet <my IP>
     Trying <my IP>...
     Connected to <my IP>.
     Escape character is '^]'.
@@ -61,12 +62,12 @@ wrote some code to automatically disconnect every tenth time through Arduino's
 event loop, `loop()`.
 
     
-        void loop() {
+    void loop() {
       if (i % 10 == 0) {
-    Serial.println("\nPurposely disconnecting WiFi\n");
-    WiFi.disconnect();
-    delay(5000);
-    WiFiSetup();
+        Serial.println("\nPurposely disconnecting WiFi\n");
+        WiFi.disconnect();
+        delay(5000);
+        WiFiSetup();
       }
       i = i + 1;
     }
@@ -98,14 +99,14 @@ problem by editing `connect()` in WiFiClient.cpp, specifically by adding this
 single line to `WiFiClient::connect()`:
 
     
-        if (!connected())
+    if (!connected())
     {
-    // Add this
+        // Add this
         WiFiClass::_state[_sock] = -1;
-    // end of add
+        // end of add
     
         return 0;
-        }
+    }
     
 
 This line runs if the client fails to connect; it resets the socket to make it
@@ -140,7 +141,7 @@ the server couldn't restart properly. To fix it, I created a `disconnect()`
 method in WiFiServer.cpp:
 
     
-        void WiFiServer::disconnect() {
+    void WiFiServer::disconnect() {
       WiFiClass::_state[_sock] = -1;
       WiFiClass::_server_port[_sock] = 0;
     }
@@ -157,12 +158,12 @@ restarting the WiFi. Adding the line `delay(10000);` before running
 `WiFiSetup()` does the trick:
 
     
-        void loop() {
-    Serial.println("\nPurposely disconnecting WiFi\n");
-    server.disconnect();
-    WiFi.disconnect();
-    delay(10000);
-    WiFiSetup();
+    void loop() {
+      Serial.println("\nPurposely disconnecting WiFi\n");
+      server.disconnect();
+      WiFi.disconnect();
+      delay(10000);
+      WiFiSetup();
     }
     
 
@@ -178,7 +179,7 @@ properly. When I examine the client using `serverDrv.getClientState()`,
 everything - _everything_ \- hangs indefinitely:
 
     
-        Purposely disconnecting WiFi
+    Purposely disconnecting WiFi
     
     ********************************
     
@@ -206,7 +207,7 @@ while a pin called `SLAVEREADY` \- the Arduino-WiFi Shield handshake pin - is
 high.
 
     
-        #define waitSlaveReady() (digitalRead(SLAVEREADY) == LOW)
+    #define waitSlaveReady() (digitalRead(SLAVEREADY) == LOW)
     void SpiDrv::waitForSlaveReady()
     {
         while (!waitSlaveReady());
@@ -218,6 +219,3 @@ problem, I'm going to have to throw in the towel. There's no more code to
 debug - I'd have to get out datasheets and begin from there.
 
 * * *
-
-###### Category: [misc](/category/misc.html).
-
