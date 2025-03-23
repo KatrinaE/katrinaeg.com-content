@@ -1106,7 +1106,7 @@ it would be rude for me to have worked on her fun problem all year without
 giving her anything in return.&lt;/p&gt;
 &lt;p&gt;So my plan is to get all of those things done within the next few months - in
 time for this year's conference.&lt;/p&gt;
-&lt;hr&gt;</content><category term="misc"></category></entry><entry><title>The Simulated Annealing Algorithm</title><link href="/the-simulated-annealing-algorithm.html" rel="alternate"></link><published>2014-02-20T00:00:00+00:00</published><updated>2014-02-20T00:00:00+00:00</updated><author><name>Katrina Ellison Geltman</name></author><id>tag:None,2014-02-20:/the-simulated-annealing-algorithm.html</id><summary type="html">&lt;p&gt;Simulated annealing is a method for finding a good (not necessarily perfect)
+&lt;hr&gt;</content><category term="misc"></category></entry><entry><title>The Simulated Annealing Algorithm</title><link href="/simulated-annealing.html" rel="alternate"></link><published>2014-02-20T00:00:00+00:00</published><updated>2014-02-20T00:00:00+00:00</updated><author><name>Katrina Ellison Geltman</name></author><id>tag:None,2014-02-20:/simulated-annealing.html</id><summary type="html">&lt;p&gt;Simulated annealing is a method for finding a good (not necessarily perfect)
 solution to an optimization problem. If you're in a situation where you want
 to maximize or minimize something, your problem can likely be tackled with
 simulated annealing.&lt;/p&gt;
@@ -1154,11 +1154,9 @@ which we'll get to in a moment.&lt;/p&gt;
 &lt;li&gt;Calculate its cost using some cost function you've defined&lt;/li&gt;
 &lt;li&gt;Generate a random neighboring solution&lt;/li&gt;
 &lt;li&gt;Calculate the new solution's cost&lt;/li&gt;
-&lt;li&gt;Compare them:&lt;ul&gt;
+&lt;li&gt;Compare them:&lt;/li&gt;
 &lt;li&gt;If cnew &amp;lt; cold: move to the new solution&lt;/li&gt;
 &lt;li&gt;If cnew &amp;gt; cold: &lt;em&gt;maybe&lt;/em&gt; move to the new solution&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
 &lt;li&gt;Repeat steps 3-5 above until an acceptable solution is found or you reach some maximum number of iterations.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3&gt;Let's break it down&lt;/h3&gt;
@@ -1286,9 +1284,7 @@ Another excellent source is the 1983 paper &lt;a href="http://home.gwu.edu/~stro
 Annealing"&lt;/a&gt;
 by Kirkpatrick, Gelatti, and Vecchi. It's a bit dense, but relatively readable
 for an academic paper.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h6&gt;Category: &lt;a href="/category/how-to.html"&gt;How-to&lt;/a&gt;. Tags: [Seating&lt;/h6&gt;
-&lt;p&gt;Chart](/tag/seating-chart.html), &lt;a href="/tag/algorithms.html"&gt;Algorithms&lt;/a&gt;,&lt;/p&gt;</content><category term="misc"></category></entry><entry><title>Hacker School: Weeks 1 &amp; 2</title><link href="/hacker-school-weeks-1-2.html" rel="alternate"></link><published>2014-02-18T00:00:00+00:00</published><updated>2014-02-18T00:00:00+00:00</updated><author><name>Katrina Ellison Geltman</name></author><id>tag:None,2014-02-18:/hacker-school-weeks-1-2.html</id><summary type="html">&lt;h3&gt;What is Hacker School?&lt;/h3&gt;
+&lt;hr&gt;</content><category term="misc"></category></entry><entry><title>Hacker School: Weeks 1 &amp; 2</title><link href="/hacker-school-weeks-1-2.html" rel="alternate"></link><published>2014-02-18T00:00:00+00:00</published><updated>2014-02-18T00:00:00+00:00</updated><author><name>Katrina Ellison Geltman</name></author><id>tag:None,2014-02-18:/hacker-school-weeks-1-2.html</id><summary type="html">&lt;h3&gt;What is Hacker School?&lt;/h3&gt;
 &lt;p&gt;After many times trying and utterly failing to communicate to people what
 Hacker School is, I've discovered that it's best to cut to the chase:&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Hacker School is 60 people, in a room, doing whatever they want.&lt;/em&gt;&lt;/p&gt;

@@ -1,6 +1,7 @@
 Title: The Simulated Annealing Algorithm
 Date: Thu 20 February 2014
 Author: Katrina Ellison Geltman
+Slug: simulated-annealing
 
 Simulated annealing is a method for finding a good (not necessarily perfect)
 solution to an optimization problem. If you're in a situation where you want
@@ -55,14 +56,14 @@ despite its somewhat scary name.
 Here's a really high-level overview. It skips some very important details,
 which we'll get to in a moment.
 
-  1. First, generate a random solution
-  2. Calculate its cost using some cost function you've defined
-  3. Generate a random neighboring solution
-  4. Calculate the new solution's cost
-  5. Compare them:
-     * If cnew < cold: move to the new solution
-     * If cnew > cold: _maybe_ move to the new solution
-  6. Repeat steps 3-5 above until an acceptable solution is found or you reach some maximum number of iterations.
+1. First, generate a random solution
+2. Calculate its cost using some cost function you've defined
+3. Generate a random neighboring solution
+4. Calculate the new solution's cost
+5. Compare them:
+   * If cnew < cold: move to the new solution
+   * If cnew > cold: _maybe_ move to the new solution
+6. Repeat steps 3-5 above until an acceptable solution is found or you reach some maximum number of iterations.
 
 ### Let's break it down
 
@@ -163,9 +164,9 @@ The acceptance probability function takes in the old cost, new cost, and
 current temperature and spits out a number between 0 and 1, which is a sort of
 recommendation on whether or not to jump to the new solution. For example:
 
-  * 1.0: definitely switch (the new solution is better)
-  * 0.0: definitely stay put (the new solution is infinitely worse)
-  * 0.5: the odds are 50-50
+* 1.0: definitely switch (the new solution is better)
+* 0.0: definitely stay put (the new solution is infinitely worse)
+* 0.5: the odds are 50-50
 
 Once the acceptance probability is calculated, it's compared to a randomly-
 generated number between 0 and 1. If the acceptance probability is larger than
@@ -191,11 +192,11 @@ equation to help them move from a random solution to one with a very low cost.
 
 This equation means that the acceptance probability:
 
-  * is always > 1 when the new solution is better than the old one. Since you can't have a probability greater than 100%, we use $\alpha = 1$ in this case..
+* is always > 1 when the new solution is better than the old one. Since you can't have a probability greater than 100%, we use $\alpha = 1$ in this case..
 
-  * gets smaller as the new solution gets more worse than the old one.
+* gets smaller as the new solution gets more worse than the old one.
 
-  * gets smaller as the temperature decreases (if the new solution is worse than the old one)
+* gets smaller as the temperature decreases (if the new solution is worse than the old one)
 
 What this means is that the algorithm is more likely to accept sort-of-bad
 jumps than really-bad jumps, and is more likely to accept them early on, when
@@ -220,7 +221,3 @@ by Kirkpatrick, Gelatti, and Vecchi. It's a bit dense, but relatively readable
 for an academic paper.
 
 * * *
-
-###### Category: [How-to](/category/how-to.html). Tags: [Seating
-Chart](/tag/seating-chart.html), [Algorithms](/tag/algorithms.html),
-
