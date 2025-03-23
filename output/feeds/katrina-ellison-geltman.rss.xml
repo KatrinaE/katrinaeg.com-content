@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Katrina Ellison Geltman - Katrina Ellison Geltman</title><link>/</link><description></description><lastBuildDate>Sun, 27 Dec 2015 00:00:00 +0000</lastBuildDate><item><title>Installing Unison 2.40.63 on OS X El Capitan</title><link>/unison-el-capitan.html</link><description>&lt;p&gt;I recently needed to install Unison version 2.40.63 on a machine running OS X
+<rss version="2.0"><channel><title>Katrina Ellison Geltman - Katrina Ellison Geltman</title><link>/</link><description></description><lastBuildDate>Sun, 23 Mar 2025 00:00:00 +0000</lastBuildDate><item><title>How to Recover a Pelican Site</title><link>/site-recovery.html</link><description>&lt;p&gt;Perhaps you, like me, have lost the original content used to generate a
+&lt;a href="https://docs.getpelican.com/en/latest/index.html"&gt;Pelican&lt;/a&gt; website.
+You have the site itself, but without the original settings and Markdown
+files, it's difficult to add any new content.&lt;/p&gt;
+&lt;p&gt;This article is about how to recover that content.&lt;/p&gt;
+&lt;h3&gt;Install Python and Pelican&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Ensure&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Python …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Katrina Ellison Geltman</dc:creator><pubDate>Sun, 23 Mar 2025 00:00:00 +0000</pubDate><guid isPermaLink="false">tag:None,2025-03-23:/site-recovery.html</guid><category>misc</category></item><item><title>Installing Unison 2.40.63 on OS X El Capitan</title><link>/unison-el-capitan.html</link><description>&lt;p&gt;I recently needed to install Unison version 2.40.63 on a machine running OS X
 10.11 El Capitan. There are no prebuilt binaries available (except for the GUI
 versions listed in "The Easy Alternative" below), so I had to install from
 source. It was a bit of a …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Katrina Ellison Geltman</dc:creator><pubDate>Sun, 27 Dec 2015 00:00:00 +0000</pubDate><guid isPermaLink="false">tag:None,2015-12-27:/unison-el-capitan.html</guid><category>misc</category></item><item><title>Hacker School Reflections</title><link>/hs-reflections.html</link><description>&lt;p&gt;When I arrived at Hacker School, I laid out the following goals for myself:&lt;/p&gt;
