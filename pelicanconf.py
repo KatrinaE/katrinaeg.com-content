@@ -3,7 +3,7 @@ SITENAME = "Katrina Ellison Geltman"
 FOUNDATION_FOOTER_TEXT = ' '
 FOUNDATION_PYGMENT_THEME = 'bw'
 MONTH_ARCHIVE_SAVE_AS = 'posts/{date:%Y}/{date:%m}/index.html'
-STATIC_PATHS = ['theme/img']
+STATIC_PATHS = ['images', 'theme/img']
 LINKS = [['LinkedIn', 'http://www.linkedin.com/in/katrinaellison'],
          ['GitHub', 'http://www.github.com/katrinae'],
          ['SlideShare', 'http://www.slideshare.net/kellison00']

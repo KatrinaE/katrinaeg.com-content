@@ -222,8 +222,7 @@ start by trying a compiler with a different major version (e.g. 3.x instead of
 4.x). See also the discussion on &lt;a href="http://unix.stackexchange.com/questions/52945/how-to-fix-unison-
 failing-with-fatal-error-internal-error-new-archives-are-no"&gt;Stack
 Exchange&lt;/a&gt;.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h6&gt;Category: &lt;a href="/category/how-to.html"&gt;How-to&lt;/a&gt;.&lt;/h6&gt;</content><category term="misc"></category></entry><entry><title>A Python LRU Cache</title><link href="/lru-cache.html" rel="alternate"></link><published>2014-05-05T00:00:00+00:00</published><updated>2014-05-05T00:00:00+00:00</updated><author><name>Katrina Ellison Geltman</name></author><id>tag:None,2014-05-05:/lru-cache.html</id><summary type="html">&lt;p&gt;Caches are structures for storing data for future use so that it doesn't have
+&lt;hr&gt;</content><category term="misc"></category></entry><entry><title>A Python LRU Cache</title><link href="/lru-cache.html" rel="alternate"></link><published>2014-05-05T00:00:00+00:00</published><updated>2014-05-05T00:00:00+00:00</updated><author><name>Katrina Ellison Geltman</name></author><id>tag:None,2014-05-05:/lru-cache.html</id><summary type="html">&lt;p&gt;Caches are structures for storing data for future use so that it doesn't have
 to be re-calculated each time it is accessed. You might be familiar with them
 in the context of the web (your browser can cache a page so that it doesn't
 need to be reloaded the next …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Caches are structures for storing data for future use so that it doesn't have

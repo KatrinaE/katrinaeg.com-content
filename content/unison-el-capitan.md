@@ -284,5 +284,3 @@ Exchange](http://unix.stackexchange.com/questions/52945/how-to-fix-unison-
 failing-with-fatal-error-internal-error-new-archives-are-no).
 
 * * *
-
-###### Category: [How-to](/category/how-to.html).
