@@ -396,106 +396,7 @@ car unusable.&lt;/p&gt;
 microcontroller with built-in wifi. It showed promise, but had its own
 problems. After a couple of weeks of finicking with the hardware, we decided
 to drop the project.&lt;/p&gt;
-&lt;hr&gt;</content><category term="misc"></category></entry><entry><title>Counting Overlapping Elements in Python</title><link href="/counting-overlapping-elements-in-python.html" rel="alternate"></link><published>2014-04-16T00:00:00+00:00</published><updated>2014-04-16T00:00:00+00:00</updated><author><name>Katrina Ellison Geltman</name></author><id>tag:None,2014-04-16:/counting-overlapping-elements-in-python.html</id><summary type="html">&lt;p&gt;Say you have a list of lists, like:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;    matrix = [[1, 2, 3], [4, 5, 6], [1, 2, 6]]
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;You want to know how many times pairs of numbers occur in the same list, or
-overlap. In the example above, you'd have:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;*&lt;/span&gt; 1 &amp;amp; 2: paired twice
-&lt;span class="k"&gt;*&lt;/span&gt; 1 &amp;amp; 3: paired once
-&lt;span class="k"&gt;*&lt;/span&gt; 2 …&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;Say you have a list of lists, like:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;    matrix = [[1, 2, 3], [4, 5, 6], [1, 2, 6]]
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;You want to know how many times pairs of numbers occur in the same list, or
-overlap. In the example above, you'd have:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;*&lt;/span&gt; 1 &amp;amp; 2: paired twice
-&lt;span class="k"&gt;*&lt;/span&gt; 1 &amp;amp; 3: paired once
-&lt;span class="k"&gt;*&lt;/span&gt; 2 &amp;amp; 3: paired once
-&lt;span class="k"&gt;*&lt;/span&gt; 4 &amp;amp; 5: paired once
-&lt;span class="k"&gt;*&lt;/span&gt; 4 &amp;amp; 6: paired once
-&lt;span class="k"&gt;*&lt;/span&gt; 5 &amp;amp; 6: paired once
-&lt;span class="k"&gt;*&lt;/span&gt; 1 &amp;amp; 6: paired once
-&lt;span class="k"&gt;*&lt;/span&gt; 2 &amp;amp; 6: paired once
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;You'd like some code that tells you that there's one pairing that occur twice
-and seven pairings that occur once. &lt;a href="http://stackoverflow.com/questions/10844556/python-counting-frequency-of-
-pairs-of-elements-in-a-list-of-lists"&gt;Stack Overflow will tell you how to do
-it&lt;/a&gt;:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nn"&gt;collections&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Counter&lt;/span&gt;
-&lt;span class="kn"&gt;from&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nn"&gt;itertools&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;chain&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;combinations&lt;/span&gt;
-&lt;span class="n"&gt;Counter&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;chain&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;from_iterable&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;combinations&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;row&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;row&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ow"&gt;in&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;matrix&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;That works, but it's completely confusing. I'm going to break down what it's
-doing, beginning with &lt;code&gt;combinations(row, 2)&lt;/code&gt;.&lt;/p&gt;
-&lt;h4&gt;Producing combinations&lt;/h4&gt;
-&lt;p&gt;&lt;code&gt;combinations()&lt;/code&gt; produces an iterator containing the pairs in an input
-iterable (e.g. a list). The code below uses &lt;code&gt;combinations&lt;/code&gt; to generate all the
-pairs in the matrix's first row. Each tuple represents one pairing; for
-example, &lt;code&gt;(1, 2)&lt;/code&gt; indicates that 1 and 2 were in the same row one time.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;combinations&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;matrix&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-
-&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;
-&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;itertools&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;combinations&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;object&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;at&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mh"&gt;0x10d1719f0&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
-
-&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;list&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="p"&gt;[(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;)]&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;To find the combinations in all of the rows in the matrix, we apply
-&lt;code&gt;combinations()&lt;/code&gt; to each row through a generator comprehension. A generator
-comprehension has the same syntax as a list comprehension but produces a
-generator instead of a list.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;combos&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;combinations&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;row&lt;/span&gt;,&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;row&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;in&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;matrix&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;
-
-&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;print&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;combos&lt;/span&gt;
-&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nv"&gt;generator&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;object&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nv"&gt;genexpr&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;at&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="nv"&gt;x10d168f00&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
-
-&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;print&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;[&lt;span class="nv"&gt;list&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;x&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;x&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;in&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;combos&lt;/span&gt;]
-[[&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;,&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;,&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;,&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;,&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;,&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;],&lt;span class="w"&gt; &lt;/span&gt;[&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;,&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;,&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;,&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;,&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;,&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;],&lt;span class="w"&gt; &lt;/span&gt;[&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;,&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;,&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;,&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;,&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;,&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;]]
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h4&gt;Chaining the combinations&lt;/h4&gt;
-&lt;p&gt;Our end goal is to count how many there are of each tuple; we should end up
-with one that occurs twice (&lt;code&gt;(1, 2)&lt;/code&gt;) and seven that occur once. By inspecting
-the output above, &lt;em&gt;we&lt;/em&gt; can see that this is the case, but Python can't because
-the tuples aren't all in the same combinations object. Enter
-&lt;code&gt;chain.from_iterable()&lt;/code&gt;, a function that will combine each of the
-&lt;code&gt;combinations&lt;/code&gt; objects in &lt;code&gt;combos&lt;/code&gt; into one giant iterator:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;    &amp;gt;&amp;gt;&amp;gt; chained_combos = chain.from_iterable(combos)
-&amp;gt;&amp;gt;&amp;gt; list(chained_combos)
-[(1, 2), (1, 3), (2, 3), (4, 5), (4, 6), (5, 6), (1, 2), (1, 6), (2, 6)]
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h4&gt;Counting the pairs in the chain&lt;/h4&gt;
-&lt;p&gt;Now we can create a &lt;code&gt;Counter&lt;/code&gt; object to tally the frequency of each pairing. A
-&lt;code&gt;Counter&lt;/code&gt; is a type of dictionary used for creating tallies: the keys are the
-items you're counting, and the values are the tallies.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;    &amp;gt;&amp;gt;&amp;gt; counts = Counter(chained_combos)
-&amp;gt;&amp;gt;&amp;gt; print counts
-Counter({(1, 2): 2, (1, 3): 1, (4, 6): 1, (4, 5): 1, (5, 6): 1, (2, 6): 1, (2, 3): 1, (1, 6): 1})
-&amp;gt;&amp;gt;&amp;gt; print counts.values()
-[2, 1, 1, 1, 1, 1, 1, 1]
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h4&gt;Tallying the overall frequencies&lt;/h4&gt;
-&lt;p&gt;Finally, to count the overall frequencies, we use a second counter:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;    &amp;gt;&amp;gt;&amp;gt; overall_counts = Counter(counts.values())
-&amp;gt;&amp;gt;&amp;gt; print overall_counts
-Counter({1: 7, 2: 1})
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Ta da! 7 pairs together once, 1 pair together twice.&lt;/p&gt;
-&lt;p&gt;This can be easily extended from pairs to trios, quartets, and larger groups
-by replacing &lt;code&gt;combinations(row, 2)&lt;/code&gt; with &lt;code&gt;combinations(row, &amp;lt;your-size&amp;gt;)&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;Finally, an important note: this will only work if the values inside each
-tuple are always listed in the same order. &lt;code&gt;(1, 2)&lt;/code&gt; is not the same as &lt;code&gt;(2,
-1)&lt;/code&gt;.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h6&gt;Category: &lt;a href="/category/misc.html"&gt;misc&lt;/a&gt;.&lt;/h6&gt;</content><category term="misc"></category></entry><entry><title>Python Counter Performance</title><link href="/python-counter-performance.html" rel="alternate"></link><published>2014-04-16T00:00:00+00:00</published><updated>2014-04-16T00:00:00+00:00</updated><author><name>Katrina Ellison Geltman</name></author><id>tag:None,2014-04-16:/python-counter-performance.html</id><summary type="html">&lt;p&gt;Python's Counters are a subclass of dictionaries used for tallying how many
+&lt;hr&gt;</content><category term="misc"></category></entry><entry><title>Python Counter Performance</title><link href="/python-counter-performance.html" rel="alternate"></link><published>2014-04-16T00:00:00+00:00</published><updated>2014-04-16T00:00:00+00:00</updated><author><name>Katrina Ellison Geltman</name></author><id>tag:None,2014-04-16:/python-counter-performance.html</id><summary type="html">&lt;p&gt;Python's Counters are a subclass of dictionaries used for tallying how many
 times elements occur in an iterable data structure like a list. I'm writing an
 application that makes heavy use of Counters - like creating 10,000,000
 counters in one run - and I found that they were a performance …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Python's Counters are a subclass of dictionaries used for tallying how many
@@ -750,6 +651,105 @@ iterating through the items in both of the input Counters (&lt;code&gt;self.item
 to instantiate those Counters initially.&lt;/p&gt;
 &lt;p&gt;Gah. Looks like I'll have to come up with another idea to improve my program's
 running time.&lt;/p&gt;
+&lt;hr&gt;</content><category term="misc"></category></entry><entry><title>Counting Overlapping Elements in Python</title><link href="/python-counters.html" rel="alternate"></link><published>2014-04-16T00:00:00+00:00</published><updated>2014-04-16T00:00:00+00:00</updated><author><name>Katrina Ellison Geltman</name></author><id>tag:None,2014-04-16:/python-counters.html</id><summary type="html">&lt;p&gt;Say you have a list of lists, like:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;matrix = [[1, 2, 3], [4, 5, 6], [1, 2, 6]]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;You want to know how many times pairs of numbers occur in the same list, or
+overlap. In the example above, you'd have:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;1 &amp;amp; 2: paired twice&lt;/li&gt;
+&lt;li&gt;1 &amp;amp; 3: paired once&lt;/li&gt;
+&lt;li&gt;2 …&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;p&gt;Say you have a list of lists, like:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;matrix = [[1, 2, 3], [4, 5, 6], [1, 2, 6]]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;You want to know how many times pairs of numbers occur in the same list, or
+overlap. In the example above, you'd have:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;1 &amp;amp; 2: paired twice&lt;/li&gt;
+&lt;li&gt;1 &amp;amp; 3: paired once&lt;/li&gt;
+&lt;li&gt;2 &amp;amp; 3: paired once&lt;/li&gt;
+&lt;li&gt;4 &amp;amp; 5: paired once&lt;/li&gt;
+&lt;li&gt;4 &amp;amp; 6: paired once&lt;/li&gt;
+&lt;li&gt;5 &amp;amp; 6: paired once&lt;/li&gt;
+&lt;li&gt;1 &amp;amp; 6: paired once&lt;/li&gt;
+&lt;li&gt;2 &amp;amp; 6: paired once&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You'd like some code that tells you that there's one pairing that occur twice
+and seven pairings that occur once. &lt;a href="http://stackoverflow.com/questions/10844556/python-counting-frequency-of-
+pairs-of-elements-in-a-list-of-lists"&gt;Stack Overflow will tell you how to do
+it&lt;/a&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;from&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nn"&gt;collections&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Counter&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nn"&gt;itertools&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;chain&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;combinations&lt;/span&gt;
+&lt;span class="n"&gt;Counter&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;chain&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;from_iterable&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;combinations&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;row&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;row&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ow"&gt;in&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;matrix&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;That works, but it's completely confusing. I'm going to break down what it's
+doing, beginning with &lt;code&gt;combinations(row, 2)&lt;/code&gt;.&lt;/p&gt;
+&lt;h3&gt;Producing combinations&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;combinations()&lt;/code&gt; produces an iterator containing the pairs in an input
+iterable (e.g. a list). The code below uses &lt;code&gt;combinations&lt;/code&gt; to generate all the
+pairs in the matrix's first row. Each tuple represents one pairing; for
+example, &lt;code&gt;(1, 2)&lt;/code&gt; indicates that 1 and 2 were in the same row one time.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;combinations&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;matrix&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;
+&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;itertools&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;combinations&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;object&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;at&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mh"&gt;0x10d1719f0&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
+
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;list&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;[(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;)]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;To find the combinations in all of the rows in the matrix, we apply
+&lt;code&gt;combinations()&lt;/code&gt; to each row through a generator comprehension. A generator
+comprehension has the same syntax as a list comprehension but produces a
+generator instead of a list.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;combos&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;combinations&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;row&lt;/span&gt;,&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;row&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;in&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;matrix&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;
+
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;print&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;combos&lt;/span&gt;
+&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nv"&gt;generator&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;object&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nv"&gt;genexpr&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;at&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="nv"&gt;x10d168f00&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
+
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;print&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;[&lt;span class="nv"&gt;list&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;x&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;x&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;in&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;combos&lt;/span&gt;]
+[[&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;,&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;,&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;,&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;,&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;,&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;],&lt;span class="w"&gt; &lt;/span&gt;[&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;,&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;,&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;,&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;,&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;,&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;],&lt;span class="w"&gt; &lt;/span&gt;[&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;,&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;,&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;,&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;,&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;,&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;]]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3&gt;Chaining the combinations&lt;/h3&gt;
+&lt;p&gt;Our end goal is to count how many there are of each tuple; we should end up
+with one that occurs twice (&lt;code&gt;(1, 2)&lt;/code&gt;) and seven that occur once. By inspecting
+the output above, &lt;em&gt;we&lt;/em&gt; can see that this is the case, but Python can't because
+the tuples aren't all in the same combinations object. Enter
+&lt;code&gt;chain.from_iterable()&lt;/code&gt;, a function that will combine each of the
+&lt;code&gt;combinations&lt;/code&gt; objects in &lt;code&gt;combos&lt;/code&gt; into one giant iterator:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; chained_combos = chain.from_iterable(combos)
+&amp;gt;&amp;gt;&amp;gt; list(chained_combos)
+[(1, 2), (1, 3), (2, 3), (4, 5), (4, 6), (5, 6), (1, 2), (1, 6), (2, 6)]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3&gt;Counting the pairs in the chain&lt;/h3&gt;
+&lt;p&gt;Now we can create a &lt;code&gt;Counter&lt;/code&gt; object to tally the frequency of each pairing. A
+&lt;code&gt;Counter&lt;/code&gt; is a type of dictionary used for creating tallies: the keys are the
+items you're counting, and the values are the tallies.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; counts = Counter(chained_combos)
+&amp;gt;&amp;gt;&amp;gt; print counts
+Counter({(1, 2): 2, (1, 3): 1, (4, 6): 1, (4, 5): 1, (5, 6): 1, (2, 6): 1, (2, 3): 1, (1, 6): 1})
+&amp;gt;&amp;gt;&amp;gt; print counts.values()
+[2, 1, 1, 1, 1, 1, 1, 1]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3&gt;Tallying the overall frequencies&lt;/h3&gt;
+&lt;p&gt;Finally, to count the overall frequencies, we use a second counter:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; overall_counts = Counter(counts.values())
+&amp;gt;&amp;gt;&amp;gt; print overall_counts
+Counter({1: 7, 2: 1})
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Ta da! 7 pairs together once, 1 pair together twice.&lt;/p&gt;
+&lt;p&gt;This can be easily extended from pairs to trios, quartets, and larger groups
+by replacing &lt;code&gt;combinations(row, 2)&lt;/code&gt; with &lt;code&gt;combinations(row, &amp;lt;your-size&amp;gt;)&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Finally, an important note: this will only work if the values inside each
+tuple are always listed in the same order. &lt;code&gt;(1, 2)&lt;/code&gt; is not the same as &lt;code&gt;(2,
+1)&lt;/code&gt;.&lt;/p&gt;
 &lt;hr&gt;</content><category term="misc"></category></entry><entry><title>Debugging the Arduino WiFi Shield</title><link href="/arduino-debugging.html" rel="alternate"></link><published>2014-04-01T00:00:00+00:00</published><updated>2014-04-01T00:00:00+00:00</updated><author><name>Katrina Ellison Geltman</name></author><id>tag:None,2014-04-01:/arduino-debugging.html</id><summary type="html">&lt;h3&gt;The Problem&lt;/h3&gt;
 &lt;p&gt;After disconnecting from the internet, the Arduno WiFi shield (sitting atop an
 Uno) is able to reconnect, but cannot re-start a server.&lt;/p&gt;
