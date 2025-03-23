@@ -1,6 +1,7 @@
 Title: Hacker School: Weeks 1 & 2
 Date: Tue 18 February 2014
 Author: Katrina Ellison Geltman
+Slug: hacker-school-w1
 
 ### What is Hacker School?
 
@@ -32,20 +33,17 @@ before.
 But I don't spend all day sitting alone and working on this project. For
 example, yesterday I:
 
-    * Worked with a facilitator to fix a bug in my program. In the process, learned (finally!) how doctests work and the difference between `repr()` and `str()`
-    * Had lunch with two Hacker Schoolers I'd never met before, both of whom were really interested in my problem. We talked about possible algorithm choices, including gradient descent, genetic algorithms, and simulated annealing (my current approach combines the latter with a basic greedy alg)
-    * Helped someone who was building his own web framework figure out how to pass POST data into his app
-    * Showed someone how to find the current Python executable by typing `which python` into the terminal
-    * Converted the data structure holding data about each person in my app from a dictionary to an object (mainly for code clarity)
-    * Participated in a discussion about why SICP is so great
-    * Learned that context-dependent message parsing leads to those SSL certificate errors you get sometimes while you're browsing the internet (I had trouble wrapping my head around this one... but hopefully next time I hear about it, it won't sound completely foreign)
-    * Set up this blog!
-    * Watched [Mel Chua](http://melchua.com/ "Mel Chua") give a talk about how programmers learn. I have some background in education, and she drew upon a lot of the same research that we applied to K-12 settings. It was really cool to see that information again in this context.
-    * Met my Hacker School mentor for the first time. HS provides an alumni mentor for anyone who is interested.
+* Worked with a facilitator to fix a bug in my program. In the process, learned (finally!) how doctests work and the difference between `repr()` and `str()`
+* Had lunch with two Hacker Schoolers I'd never met before, both of whom were really interested in my problem. We talked about possible algorithm choices, including gradient descent, genetic algorithms, and simulated annealing (my current approach combines the latter with a basic greedy alg)
+* Helped someone who was building his own web framework figure out how to pass POST data into his app
+* Showed someone how to find the current Python executable by typing `which python` into the terminal
+* Converted the data structure holding data about each person in my app from a dictionary to an object (mainly for code clarity)
+* Participated in a discussion about why SICP is so great
+* Learned that context-dependent message parsing leads to those SSL certificate errors you get sometimes while you're browsing the internet (I had trouble wrapping my head around this one... but hopefully next time I hear about it, it won't sound completely foreign)
+* Set up this blog!
+* Watched [Mel Chua](http://melchua.com/ "Mel Chua") give a talk about how programmers learn. I have some background in education, and she drew upon a lot of the same research that we applied to K-12 settings. It was really cool to see that information again in this context.
+* Met my Hacker School mentor for the first time. HS provides an alumni mentor for anyone who is interested.
 
 As you can see, there's a lot going on here!
 
 * * *
-
-###### Category: [Hacker School](/category/hacker-school.html).
-
