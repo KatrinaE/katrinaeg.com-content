@@ -1,6 +1,7 @@
 Title: About Me
 
-I'm a software developer specializing in infrastructure and backend.
+I'm a software developer specializing in infrastructure, backend,
+production engineering, and financial systems.
 I'm currently taking time off to be with my family.
 
 I previously worked at [Goldman Sachs](https://www.goldmansachs.com), [DigitalOcean](https://www.digitalocean.com), [Bond Street](https://www.bondstreet.com), and [PhotoShelter](https://www.photoshelter.com).
