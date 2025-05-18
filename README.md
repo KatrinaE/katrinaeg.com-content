@@ -1,5 +1,17 @@
 This is the code and content used to generate [katrinaeg.com](http://www.katrinaeg.com).
 
+Generate content with
+
+```
+../pelican-dev-env/bin/python -m pelican content -s pelicanconf.py
+```
+
+Look at output in browser with
+
+```
+../pelican-dev-env/bin/python -m http.server -d ~/pelican-dev/pelican-site/output 3000
+```
+
 A rough guide:
 
 * Articles live in _content/_
